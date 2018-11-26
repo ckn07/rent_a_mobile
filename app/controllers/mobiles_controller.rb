@@ -1,4 +1,6 @@
 class MobilesController < ApplicationController
+  before_action :set_mobile, only: [:show, :new, :create]
+
   def index
   end
 
@@ -10,4 +12,9 @@ class MobilesController < ApplicationController
 
   def edit
   end
+
+  def set_mobile
+    @mobile = Mobile.find(params[:id])
+  end
 end
+      # , :brand, :model, :daily_price, :user_id, :photo, :address, :postcode, :city, :country])
