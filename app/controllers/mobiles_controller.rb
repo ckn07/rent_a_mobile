@@ -1,5 +1,6 @@
 class MobilesController < ApplicationController
   def index
+    @mobiles = Mobile.all
   end
 
   def show
