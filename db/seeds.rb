@@ -151,7 +151,7 @@ puts "Review created by Benoit"
 
 puts "Creating a booking from Chris phones to Cecile."
 reviewTwo = Review.new(
-  content: "#{Faker::FamousLastWords.last_words*5}",
+  content: "#{Faker::FamousLastWords.last_words*4}",
   star: 5
   )
 reviewTwo.booking_id = bookingTwo.user_id
