@@ -48,5 +48,63 @@ chris = User.create!(email: "christophe@noujaim.com",
  city: "Paris",
  country: "France")
 
+puts "4 users created"
+
+puts 'Cleaning database of Mobile...'
+Mobile.destroy_all
+
+puts "creating 1 mobile for each user"
+mobone = Mobile.new(brand: "Samsung",
+  model: "Note 8",
+  daily_price: "5",
+  photo: "myr1ofzlfvgayoy7bmey"
+  address: "26 rue Edouard Vaillant",
+  postcode: "93140",
+  city: "Bondy",
+  country: "France")
+mobone.user_id = jeremy.id
+mobone.save!
+
+mobtwo = Mobile.new(brand: "Apple",
+  model: "Iphone 7 +",
+  daily_price: "2",
+  photo: "myr1ofzlfvgayoy7bmey"
+  address: "3 rue de la Joncquiere",
+  postcode: "75017",
+  city: "Paris",
+  country: "France")
+mobtwo.user_id = benoit.id
+mobtwo.save!
+
+
+mobthree = Mobile.new(brand: "Samsung",
+  model: "galaxy s7",
+  daily_price: "1",
+  photo: "myr1ofzlfvgayoy7bmey"
+  address: "6 rue Euryale Dehaynin",
+  postcode: "75019",
+  city: "Paris",
+  country: "France")
+mobthree.user_id = cecile.id
+mobthree.save!
+
+mobfour = Mobile.new(brand: "One+",
+  model: "3T",
+  daily_price: "3",
+  photo: "myr1ofzlfvgayoy7bmey"
+  address: "Pigalle 69b",
+  postcode: "75018",
+  city: "Paris",
+  country: "France")
+mobfour.user_id = chris.id
+mobfour.save!
+
+
+puts "4 mobiles saved"
+
+
+puts 'Cleaning database of bookings...'
+Booking.destroy_all
+
 
 
