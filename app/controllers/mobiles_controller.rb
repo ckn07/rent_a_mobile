@@ -1,5 +1,5 @@
 class MobilesController < ApplicationController
-  before_action :set_mobile, only: [:show, :new, :create]
+  before_action :set_mobile, only: [:show]
 
   def index
   end
