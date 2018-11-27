@@ -5,7 +5,7 @@
 <h2>What people thought about that booking</h2>
 
 <% @reviews.each do |review| %>
-  <%= review.booking.user.first_name + review.booking.user.last_name %>
+  <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
   <%= review.star %>
   <%= review.content %>
 <% end %>

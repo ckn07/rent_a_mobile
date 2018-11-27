@@ -3,6 +3,8 @@ class MobilesController < ApplicationController
   end
 
   def show
+    @mobile = Mobile.find(params[:id])
+    @reviews = @mobile.bookings.reviews # => array of reviews
   end
 
   def new
