@@ -1,11 +1,35 @@
 <h1>Mobiles#show</h1>
 <p>Find me in app/views/mobiles/show.html.erb</p>
 
-<div ></div>
-<h2>What people thought about that booking</h2>
 
-<% @reviews.each do |review| %>
-  <%= review.booking.user.first_name + review.booking.user.last_name %>
-  <%= review.star %>
-  <%= review.content %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-offset-1">
+      <div class="mobile-infos">
+        <h1><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
+      </div>
+      <div class="mobile-details">
+        <p>
+        Here we can put the description, we have to add a column to our table mobile to add the content !
+        </p>
+        <p>see all reviews</p>
+      </div>
+      <div class="mobile-reviews">
+        <h2>What people thought about that booking</h2>
+          <% @reviews.each do |review| %>
+            <%= review.booking.user.first_name + review.booking.user.last_name %>
+            <%= review.star %>
+            <%= review.content %>
+          <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="booking-card">
+
+      </div>
+      <div class="map">
+
+      </div>
+    </div>
+  </div>
+</div>
