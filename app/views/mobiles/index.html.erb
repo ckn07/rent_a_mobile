@@ -12,9 +12,9 @@
     <div class="col-xs-12 col-sm-6 col-md-3">
       <div class="card">
         <div class="card-description">
-          <h3><%= mobile.name %></h3>
+          <h3><%= "#{mobile.brand} - #{mobile.model}" %></h3>
         </div>
-          <%= link_to mobile.name, mobile_path(mobile), class: 'card-link' %>
+          <%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %>
       </div>
     </div>
   <% end %>
