@@ -1,25 +1,44 @@
 class MobilesController < ApplicationController
-  before_action :set_mobile, only: [:show]
+  before_action :set_mobile, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:show, :index]
-
 
   def index
     @mobiles = Mobile.all
   end
 
   def show
-    @mobile = Mobile.find(params[:id])
-    @reviews = @mobile.reviews # => array of reviews
   end
 
   def new
+    @mobile = Mobile.new
+  end
+
+  def create
+    @mobile = Mobile.new(mobile_params)
+    @mobile.user = current_user
+    # authorize @mobile
+    if @mobile.save!
+      redirect_to mobile_path(@mobile)
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
+  def update
+    @mobile.update(mobile_params)
+    redirect_to mobile_path(@mobile)
+  end
+
   def set_mobile
     @mobile = Mobile.find(params[:id])
   end
+
+  private
+
+  def mobile_params
+    params.require(:mobile).permit(:brand, :model, :daily_price, :address, :postcode, :city, :mobile_location, :title, :body, :photo)
+  end
 end
-      # , :brand, :model, :daily_price, :user_id, :photo, :address, :postcode, :city, :country])
