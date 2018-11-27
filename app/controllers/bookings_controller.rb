@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def show
+    authorize @booking
   end
 
   def new
@@ -10,11 +12,13 @@ class BookingsController < ApplicationController
     @reviews = @mobile.reviews
     @user = current_user
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @mobile = Mobile.find(params[:mobile_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = current_user
     @booking.mobile = @mobile
     duration = (@booking.maxDate - @booking.minDate).to_i
@@ -29,9 +33,12 @@ class BookingsController < ApplicationController
     end
   end
 
-private
+
+  private
+
   def booking_params
     params.require(:booking).permit(:minDate,
     :maxDate)
   end
 end
+
