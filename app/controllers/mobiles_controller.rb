@@ -1,5 +1,6 @@
 class MobilesController < ApplicationController
   before_action :set_mobile, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @mobiles = Mobile.all
