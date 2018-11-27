@@ -3,7 +3,6 @@ class MobilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    authorize @mobile
     @mobiles = policy_scope(Mobile).order(created_at: :desc)
   end
 
@@ -39,8 +38,11 @@ class MobilesController < ApplicationController
     redirect_to mobile_path(@mobile)
   end
 
-  def delete
+  def destroy
+    @mobile = Mobile.find(params[:id])
     authorize @mobile
+    @mobile.destroy
+    redirect_to mobiles_path
   end
 
   private

@@ -18,7 +18,7 @@ class MobilePolicy < ApplicationPolicy
   end
 
   def update?
-    record.user.mobile.empty?
+    record.user == user
   end
 
   def edit?
@@ -26,7 +26,6 @@ class MobilePolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user.mobile.empty?
+    record.user == user
   end
-
 end
