@@ -1,2 +1,26 @@
 <h1>Mobiles#show</h1>
 <p>Find me in app/views/mobiles/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-offset-1">
+      <div class="mobile-infos">
+        <h1><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
+      </div>
+      <div class="mobile-details">
+        <p>
+        Here we can put the description, we have to add a column to our table mobile to add the content !
+        </p>
+        <p>see all reviews</p>
+      </div>
+      <div class="mobile-reviews"></div>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="booking-card">
+
+      </div>
+      <div class="map">
+
+      </div>
+    </div>
+  </div>
+</div>
