@@ -64,7 +64,8 @@ mobOne = Mobile.new(brand: "Samsung",
   address: "26 rue Edouard Vaillant",
   postcode: "93140",
   city: "Bondy",
-  country: "France")
+  country: "France",
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobOne.user_id = jeremy.id
 mobOne.save!
 
@@ -75,7 +76,8 @@ mobTwo = Mobile.new(brand: "Apple",
   address: "3 rue de la Joncquiere",
   postcode: "75017",
   city: "Paris",
-  country: "France")
+  country: "France",
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobTwo.user_id = benoit.id
 mobTwo.save!
 
@@ -87,7 +89,9 @@ mobThree = Mobile.new(brand: "Samsung",
   address: "6 rue Euryale Dehaynin",
   postcode: "75019",
   city: "Paris",
-  country: "France")
+  country: "France",
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+
 mobThree.user_id = cecile.id
 mobThree.save!
 
@@ -98,7 +102,9 @@ mobFour = Mobile.new(brand: "One+",
   address: "Pigalle 69b",
   postcode: "75018",
   city: "Paris",
-  country: "France")
+  country: "France",
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+
 mobFour.user_id = chris.id
 mobFour.save!
 

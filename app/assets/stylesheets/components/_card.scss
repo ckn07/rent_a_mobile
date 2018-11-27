@@ -1,3 +1,4 @@
+// Card de l'index
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -27,4 +28,17 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+// Card de la show mobile
+.card-mobile {
+  height: 275px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border: 1px solid blue;
+  padding: 15px;
+  margin: 15px;
 }
