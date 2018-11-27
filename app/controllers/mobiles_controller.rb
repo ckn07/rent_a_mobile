@@ -7,6 +7,7 @@ class MobilesController < ApplicationController
   end
 
   def show
+    @reviews = @mobile.reviews
   end
 
   def new
