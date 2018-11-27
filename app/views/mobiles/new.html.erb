@@ -1,2 +1,23 @@
-<h1>Mobiles#new</h1>
-<p>Find me in app/views/mobiles/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Ajouter un mobile</h1>
+
+      <%= simple_form_for @mobile do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= f.input :brand, html: { autocomplete: 'off' }%>
+        <%= f.input :model, html: { autocomplete: 'off' } %>
+        <%= f.input :daily_price, html: { autocomplete: 'off' } %>
+        <%= f.input :address, html: { autocomplete: 'off' } %>
+        <%= f.input :postcode, html: { autocomplete: 'off' } %>
+        <%= f.input :city, html: { autocomplete: 'off' } %>
+        <%= f.input :mobile_location, html: { autocomplete: 'off' } %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Revenir à la liste", root_path, class: "btn btn-primary btn-lg" %>
+</div>
