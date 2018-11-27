@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :postcode, :city, :country, :phone_number])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :postcode, :city, :user_location, :phone_number])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :postcode, :city, :country, :phone_number])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :postcode, :city, :user_location, :phone_number])
   end
 end
