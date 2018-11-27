@@ -1,2 +1,26 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>book the
+      <%= "#{@mobile.brand} #{@mobile.model}"  %>
+      </h1>
+      <%= simple_form_for [@mobile, @booking] do |f| %>
+        <%= f.input :minDate %>
+        <%= f.input  :maxDate %>
+        <%= f.input  :total_price %>
+        <%= f.input  :user_id %>
+        <%= f.input  :mobile_id %>
+        <%= f.input  :duration %>
+        <%= f.submit class: "btn btn-primary"%>
+      <% end %>
+
+
+    </div>
+
+
+  </div>
+</div>
+
