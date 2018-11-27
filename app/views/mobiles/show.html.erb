@@ -6,6 +6,7 @@
       </div>
       <div class="card-mobile">
         <p><%= "description: #{@mobile.content}" %></p>
+        <%= link_to "book this mobile now", new_mobile_booking_path(@mobile)  %>
       </div>
       <div class="card-mobile-reviews">
         <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
