@@ -9,4 +9,5 @@ class Mobile < ApplicationRecord
   validates :brand, presence: true
   validates :model, presence: true
   validates :daily_price, presence: true
+  mount_uploader :photo, PhotoUploader
 end
