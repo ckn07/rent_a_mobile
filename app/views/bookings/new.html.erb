@@ -7,8 +7,8 @@
       <h2>for as low as <%="#{@mobile.daily_price}"%> € per day</h2>
 
       <%= simple_form_for [@mobile, @booking] do |f| %>
-        <%= f.input :minDate %>
-        <%= f.input  :maxDate %>
+        <%= f.input :minDate, as: :string, input_html: {class: "datePicker"} %>
+        <%= f.input  :maxDate, as: :string, input_html: {class: "datePicker"} %>
         <%= f.submit class: "btn btn-primary"%>
       <% end %>
 
@@ -33,4 +33,3 @@
     </div>
   </div>
 </div>
-
