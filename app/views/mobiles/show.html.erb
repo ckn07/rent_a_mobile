@@ -1,5 +1,3 @@
-<h1>Mobiles#show</h1>
-<p>Find me in app/views/mobiles/show.html.erb</p>
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-md-offset-1">
@@ -8,11 +6,27 @@
       </div>
       <div class="card-mobile">
         <p>
-        Here we can put the description, we have to add a column to our table mobile to add the content !
+          Here we can put the description, we have to add a column to our table mobile to add the content !
         </p>
       </div>
       <div class="card-mobile">
         <p>see all reviews</p>
+      </div>
+      <div class="mobile-reviews">
+        <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
+        <% @reviews.each do |review| %>
+          <div class= 'user_fullname'>
+            <strong>
+              <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
+            </strong>
+          </div>
+          <div class="stars">
+            <%= "#{review.star}/5"  %>
+          </div>
+          <div class='review_content'>
+            <%= review.content %>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-3 col-sm-offset-1">

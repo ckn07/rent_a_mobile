@@ -163,7 +163,3 @@ reviewTwo = Review.new(
 reviewTwo.booking_id = mobTwo.user_id
 reviewTwo.save!
 puts "Review created by Cecile "
-
-
-
-
