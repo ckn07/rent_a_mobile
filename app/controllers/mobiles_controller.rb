@@ -1,6 +1,5 @@
 class MobilesController < ApplicationController
   before_action :set_mobile, only: [:show]
-  mount_uploader :photo, PhotoUploader
 
   def index
     @mobiles = Mobile.all
