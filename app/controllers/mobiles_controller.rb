@@ -15,6 +15,7 @@ class MobilesController < ApplicationController
   def create
     @mobile = Mobile.new(mobile_params)
     @mobile.user = current_user
+    # authorize @mobile
     if @mobile.save!
       redirect_to mobile_path(@mobile)
     else
