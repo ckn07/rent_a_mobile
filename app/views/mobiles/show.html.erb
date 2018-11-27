@@ -5,14 +5,9 @@
         <h1><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
       </div>
       <div class="card-mobile">
-        <p>
-          Here we can put the description, we have to add a column to our table mobile to add the content !
-        </p>
+        <p><%= "description: #{@mobile.content}" %></p>
       </div>
-      <div class="card-mobile">
-        <p>see all reviews</p>
-      </div>
-      <div class="mobile-reviews">
+      <div class="card-mobile-reviews">
         <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
         <% @reviews.each do |review| %>
           <div class= 'user_fullname'>
@@ -28,6 +23,7 @@
             <%= review.content %>
           </div>
         <% end %>
+        <p>see all reviews</p>
       </div>
     </div>
     <div class="col-sm-3 col-sm-offset-1">
