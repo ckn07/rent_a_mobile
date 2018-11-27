@@ -1,2 +1,22 @@
-<h1>Mobiles#index</h1>
-<p>Find me in app/views/mobiles/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path 'banner-phone.png' %>);">
+  <div class="banner-content">
+    <h1>Trouvez le mobile parfait</h1>
+    <p>Découvrez nos locations à la journée.</p>
+    <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
+  </div>
+</div>
+<div class="container">
+  <h2 align="center">Choissisez parmi nos mobiles</h2>
+  <div class="row">
+  <% @mobiles.each do |mobile| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card">
+        <div class="card-description">
+          <h3><%= "#{mobile.brand} - #{mobile.model}" %></h3>
+        </div>
+          <%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
