@@ -46,4 +46,10 @@
   <%= link_to "Delete this mobile offer", mobile_path(@mobile),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+
+<% if policy(@mobile).update? %>
+  <%= link_to "Edit information", edit_mobile_path %>
+<% end %>
+
+
 <% end %>
