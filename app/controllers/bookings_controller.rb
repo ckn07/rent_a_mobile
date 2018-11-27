@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def new
     @mobile = Mobile.find(params[:mobile_id])
+    @reviews = @mobile.reviews
     @user = current_user
     @booking = Booking.new
   end
@@ -21,7 +22,8 @@ class BookingsController < ApplicationController
     total = @mobile.daily_price * duration
     @booking.total_price = total
     if @booking.save
-      redirect_to mobile_booking_path(@booking)
+      redirect_to mobile_path(@booking.mobile_id)
+      notice
     else
       alert "ça ne marche pas"
     end

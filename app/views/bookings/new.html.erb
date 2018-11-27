@@ -4,6 +4,7 @@
       <h1>book the
       <%= "#{@mobile.brand} #{@mobile.model}"  %><br>
       </h1>
+      <h2>for as low as <%="#{@mobile.daily_price}"%> € per day</h2>
 
       <%= simple_form_for [@mobile, @booking] do |f| %>
         <%= f.input :minDate %>
@@ -11,6 +12,24 @@
         <%= f.submit class: "btn btn-primary"%>
       <% end %>
 
+    </div>
+  </div>
+  <div class="col-sm-6 col-sm-offset-3">
+  <div class="card-mobile-reviews">
+    <h2>What people thought about that booking</h2>
+      <% @reviews.each do |review| %>
+        <div class= 'user_fullname'>
+          <strong>
+            <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
+          </strong>
+        </div>
+        <div class="stars">
+          <%= "#{review.star}/5"  %>
+        </div>
+        <div class='review_content'>
+          <%= review.content %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
