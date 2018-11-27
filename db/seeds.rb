@@ -141,7 +141,7 @@ puts "Wow Chris has rented his phones to Cecile from #{bookingTwo.minDate} to #{
 
 puts "Creating a review from Benoit about jeremy phone"
 reviewOne = Review.new(
-  content: "#{Faker::FamousLastWords.last_words*5}",
+  content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
   star: 4
   )
 reviewOne.booking_id = bookingOne.user_id
@@ -151,7 +151,7 @@ puts "Review created by Benoit"
 
 puts "Creating a booking from Chris phones to Cecile."
 reviewTwo = Review.new(
-  content: "#{Faker::FamousLastWords.last_words*4}",
+  content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
   star: 5
   )
 reviewTwo.booking_id = bookingTwo.user_id
