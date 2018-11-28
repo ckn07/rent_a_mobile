@@ -49,7 +49,7 @@ puts "creating 1 mobile for each user"
 mobOne = Mobile.new(brand: "Samsung",
   model: "Note 8",
   daily_price: "5",
-  photo: "myr1ofzlfvgayoy7bmey",
+  photo: "qrbjs4e2nwa3gfmbyw8l",
   address: "26 rue Edouard Vaillant, 93140 Bondy, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobOne.user_id = jeremy.id
@@ -58,7 +58,7 @@ mobOne.save!
 mobTwo = Mobile.new(brand: "Apple",
   model: "Iphone 7 +",
   daily_price: "2",
-  photo: "myr1ofzlfvgayoy7bmey",
+  photo: "qrbjs4e2nwa3gfmbyw8l",
   address: "3 rue de la Joncquiere, 75017 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobTwo.user_id = benoit.id
@@ -68,7 +68,7 @@ mobTwo.save!
 mobThree = Mobile.new(brand: "Samsung",
   model: "galaxy s7",
   daily_price: "1",
-  photo: "myr1ofzlfvgayoy7bmey",
+  photo: "qrbjs4e2nwa3gfmbyw8l",
   address: "6 rue Euryale Dehaynin, 75019 Paris, France ",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
@@ -78,7 +78,7 @@ mobThree.save!
 mobFour = Mobile.new(brand: "One+",
   model: "3T",
   daily_price: "3",
-  photo: "myr1ofzlfvgayoy7bmey",
+  photo: "qrbjs4e2nwa3gfmbyw8l",
   address: "Pigalle 69b, 75018 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
