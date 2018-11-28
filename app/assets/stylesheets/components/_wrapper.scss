@@ -1,23 +1,31 @@
 .wrapper {
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
 }
 
 .card-mobile {
-
+  grid-column: 1;
+  grid-row: 1 / 4;
 }
 
 .card-mobile-reviews {
-
+  grid-column: 1;
+  grid-row: 4 / 8;
 }
 
 .mobile-booking {
-
+  grid-column: 2;
+  grid-row: 1 / 2;
 }
 
 .mobile-user {
-
+  grid-column: 2;
+  grid-row: 2 / 3;
 }
 
 .content-mobile {
-
+  grid-column: 2;
+  grid-row: 4 / 8;
 }

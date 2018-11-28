@@ -32,14 +32,14 @@
       </div>
 
 <!-- colonne de droite -->
+      <div class="mobile-user">
+        <h2> Rented by <%= @mobile.user.first_name %> </h2>
+      </div>
+
       <div class="mobile-booking">
         <% if policy(@mobile.bookings.new).create? %>
           <%= link_to "book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary' %>
         <% end %>
-      </div>
-
-      <div class="mobile-user">
-        <h2> Rented by <%= @mobile.user.first_name %> </h2>
       </div>
 
       <div class="content-mobile">
