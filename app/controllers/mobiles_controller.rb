@@ -4,13 +4,20 @@ class MobilesController < ApplicationController
 
   def index
     @mobiles = policy_scope(Mobile).order(created_at: :desc)
+    @mobiles = Mobile.where.not(latitude: nil, longitude: nil)
+
+    @markers = @mobiles.map do |mobile|
+      {
+        lng: mobile.longitude,
+        lat: mobile.latitude
+      }
+    end
   end
 
   def show
     authorize @mobile
     @mobile = Mobile.find(params[:id])
     @reviews = @mobile.reviews # => array of reviews
-
   end
 
   def new
