@@ -16,6 +16,7 @@
 .cards-container {
   display: flex;
   flex: 0 0 67%;
+  flex-wrap: wrap;
 }
 
 .flex-item {
