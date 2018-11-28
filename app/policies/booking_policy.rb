@@ -10,8 +10,8 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-   !record.mobile.user == user
-   # !record.user.mobile == record
+    record.mobile.user != user
+   # record.user.mobiles != record.mobile
   end
 
   def new?
