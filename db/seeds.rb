@@ -52,7 +52,7 @@ mobOne = Mobile.new(brand: "Samsung",
   address: "26 rue Edouard Vaillant, 93140 Bondy, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobOne.user_id = jeremy.id
-mobOne.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543339861/qrbjs4e2nwa3gfmbyw8l.jpg"
+mobOne.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543409621/meachh2bclcj1fetka7t.jpg"
 
 mobOne.save!
 
@@ -62,7 +62,7 @@ mobTwo = Mobile.new(brand: "Apple",
   address: "3 rue de la Joncquiere, 75017 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobTwo.user_id = benoit.id
-mobTwo.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543339861/qrbjs4e2nwa3gfmbyw8l.jpg"
+mobTwo.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543326588/qojtv1zwe3giwsi9erou.jpg"
 
 mobTwo.save!
 
@@ -74,7 +74,7 @@ mobThree = Mobile.new(brand: "Samsung",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobThree.user_id = cecile.id
-mobThree.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543339861/qrbjs4e2nwa3gfmbyw8l.jpg"
+mobThree.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410214/mai7zrsapni9jrubbsqn.png"
 
 mobThree.save!
 
@@ -85,7 +85,7 @@ mobFour = Mobile.new(brand: "One+",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobFour.user_id = chris.id
-mobFour.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543339861/qrbjs4e2nwa3gfmbyw8l.jpg"
+mobFour.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410345/fa3hg7q6j7ng5phzryyv.jpg"
 
 mobFour.save!
 
