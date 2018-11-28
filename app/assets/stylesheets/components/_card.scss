@@ -1,49 +1,72 @@
 // Card de l'index
 
+.cards-container {
+  display: flex;
+}
+
+// .card {
+//   height: 175px;
+//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   background-position: center;
+//   color: white;
+//   border: 1px solid red;
+//   margin-bottom: 10px;
+//   text-align: center;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// }
+
+
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  flex: 1 1 10%;
+  margin: 10px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
   background-size: cover !important;
-  background-position: center;
+}
+
+.card-body {
+  height: 180px;
+  background-size: cover;
   color: white;
   position: relative;
-  border: 1px solid red;
-  margin-bottom: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
-.card-description {
+.card-category {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   left: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  opacity: 0.9;
 }
 
-.card-description h3 {
-  font-size: 20px;
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
 
-.card-link:hover {
-  opacity: 0.1;
-}
+// .card-link:hover {
+//   opacity: 0.1;
+// }
 
-.cards-container{
-  display: flex;
-}
 // Card de la show mobile
 .card-mobile {
   height: 275px;
