@@ -53,6 +53,6 @@ class MobilesController < ApplicationController
   end
 
   def mobile_params
-    params.require(:mobile).permit(:brand, :model, :daily_price, :address, :postcode, :city, :mobile_location, :title, :body, :photo)
+    params.require(:mobile).permit(:brand, :model, :daily_price, :address, :title, :body, :photo)
   end
 end
