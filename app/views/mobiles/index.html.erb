@@ -5,22 +5,27 @@
     <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
   </div>
 </div>
+
 <div class="container">
   <h2 align="center">Choissisez parmi nos mobiles</h2>
-  <div class="row">
-  <% @mobiles.each do |mobile| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
-        <div class="card-description">
-          <h3><%= "#{mobile.brand} - #{mobile.model}" %></h3>
+  <div class="cards-container">
+    <div class="row">
+      <% @mobiles.each do |mobile| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
+  <!--           <div class="card-description"> -->
+              <h3><%= "#{mobile.brand} - #{mobile.model}" %></h3>
+  <!--           </div> -->
+              <%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %>
+          </div>
         </div>
-          <%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+    <div>MAP</div>
   </div>
-  <div class="add-a-mobile">
-    <%= link_to "Louez votre mobile", new_mobile_path, class: "btn btn-primary btn-lg" %>
 
-  </div>
 </div>
+
+
+      <!-- Gmaps js: building the map -->
+

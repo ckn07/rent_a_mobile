@@ -1,4 +1,5 @@
 // Card de l'index
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -7,15 +8,24 @@
   color: white;
   position: relative;
   border: 1px solid red;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
-  font-size: 24px;
+
+.card-description h3 {
+  font-size: 20px;
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -26,10 +36,14 @@
   background: black;
   opacity: 0;
 }
+
 .card-link:hover {
   opacity: 0.1;
 }
 
+.cards-container{
+  display: flex;
+}
 // Card de la show mobile
 .card-mobile {
   height: 275px;
