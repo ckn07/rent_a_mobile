@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Cleaning database of users...'
-User.destroy_all
-puts 'Cleaning database of Mobile...'
-Mobile.destroy_all
-puts 'Cleaning database of bookings...'
-Booking.destroy_all
 puts 'Cleaning database of Reviews...'
 Review.destroy_all
+puts 'Cleaning database of bookings...'
+Booking.destroy_all
+puts 'Cleaning database of Mobile...'
+Mobile.destroy_all
+puts 'Cleaning database of users...'
+User.destroy_all
 
 puts 'generating the best users with password 123456 '
 jeremy = User.create!(email: "jeremy.jouffroy@gmail.com",
@@ -131,7 +131,7 @@ reviewOne = Review.new(
   content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
   star: 4
   )
-reviewOne.booking_id = mobOne.user_id
+reviewOne.booking = bookingOne
 reviewOne.save!
 
 puts "Review created by Benoit"
@@ -141,6 +141,6 @@ reviewTwo = Review.new(
   content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
   star: 5
   )
-reviewTwo.booking_id = mobTwo.user_id
+reviewTwo.booking= bookingTwo
 reviewTwo.save!
 puts "Review created by Cecile "
