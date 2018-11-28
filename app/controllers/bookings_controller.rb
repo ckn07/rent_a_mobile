@@ -11,16 +11,22 @@ class BookingsController < ApplicationController
     @mobile = Mobile.find(params[:mobile_id])
     @reviews = @mobile.reviews
     @user = current_user
-    @booking = Booking.new
+
+    # @booking = Booking.new
+    # @booking.mobile = @mobile
+    # equivaut à:
+
+    @booking = @mobile.bookings.new
+
     authorize @booking
   end
 
   def create
     @mobile = Mobile.find(params[:mobile_id])
     @booking = Booking.new(booking_params)
-    authorize @booking
-    @booking.user = current_user
     @booking.mobile = @mobile
+    @booking.user = current_user
+    authorize @booking
     duration = (@booking.maxDate - @booking.minDate).to_i
     @booking.duration = duration
     total = @mobile.daily_price * duration

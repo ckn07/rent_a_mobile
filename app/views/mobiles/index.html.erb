@@ -6,24 +6,40 @@
   </div>
 </div>
 
-<div class="container">
-  <h2 align="center">Choissisez parmi nos mobiles</h2>
-  <div class="cards-container">
-    <div class="row">
-      <% @mobiles.each do |mobile| %>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
-  <!--           <div class="card-description"> -->
-              <h3><%= "#{mobile.brand} - #{mobile.model}" %></h3>
-  <!--           </div> -->
-              <%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="map-container">MAP</div>
-  </div>
 
+<div class="card-index-layout">
+  <div class="card-section">
+    <h2 class="text-center">Choose a mobile</h2>
+
+      <div class="cards-container">
+        <% @mobiles.each do |mobile| %>
+
+            <div class="card">
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
+                <%= link_to "#{mobile.brand}", mobile_path(mobile), class: 'card-category' %>
+              </div>
+
+              <div class="card-footer">
+                <p><%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %></p>
+                <div class="controls">
+                  <a href="#"><i class="fa fa-star"></i></a>
+                  <a href="#"><i class="fa fa-heart"></i></a>
+                  <a href="#"><i class="fa fa-share"></i></a>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<!--  <div class="map-container">MAP</div> -->
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
 
 
