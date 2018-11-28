@@ -6,7 +6,7 @@
       <div class="text-center">
         <h2>Book the
           <%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
-          <h2>for as low as <span id="daily_price"><%="#{@mobile.daily_price}"%></span>  € per day</h2>
+          <h2>for as low as €<span id="daily_price"><%="#{@mobile.daily_price}"%></span> per day</h2>
       </div>
 
       <%= simple_form_for [@mobile, @booking] do |f| %>
@@ -42,9 +42,16 @@
   </div>
 </div>
 <script type="text/javascript">
+
+
 const minDate = document.getElementById("booking_minDate");
 const maxDate = document.getElementById("booking_maxDate");
 const price = document.getElementById("price");
+
+
+// const validateRequest = () => {
+//   if
+// };
 
 
 const calculateThePrice = (event) => {
@@ -59,7 +66,7 @@ displayTotalPrice(totalPrice);
 };
 
 const displayTotalPrice = (element) => {
-  price.insertAdjacentHTML('beforeend', `The total price for this booking will be <strong>${element}</strong> Euros`);
+  price.insertAdjacentHTML('beforeend', `<div class="alert alert-warning">The total price for this booking will be <strong>${element}</strong> Euros</div>`);
 };
 
 maxDate.addEventListener('blur', calculateThePrice);

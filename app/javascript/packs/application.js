@@ -8,3 +8,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 flatpickr(".datePicker", {});
 initMapbox();
+
+import { initAutocomplete } from '../plugins/init_autocomplete.js';
+initAutocomplete();

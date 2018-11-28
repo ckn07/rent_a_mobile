@@ -3,9 +3,11 @@
 /* We just give you a Gmaps with random width/height */
 .map-container {
   flex: 0 0 33%;
-  height: 100vh;
+  height: 85vh;
   position: sticky !important;
   top: 0 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 15px;
 }
 
 .mapboxgl-popup {

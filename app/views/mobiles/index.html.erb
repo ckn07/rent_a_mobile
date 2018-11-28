@@ -1,45 +1,50 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path 'banner-phone.png' %>);">
   <div class="banner-content">
-    <h1>Trouvez le mobile parfait</h1>
-    <p>Découvrez nos locations à la journée.</p>
-    <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
+    <h1>Find the mobile of your dreams</h1>
+    <p>Discover our daily rents</p>
+    <a class="btn btn-form btn-lg" href="#mobiles_list">Start now</a>
   </div>
 </div>
 
-
+<div id="mobiles_list"></div>
 <div class="card-index-layout">
-  <div class="card-section">
-    <h2 class="text-center">Choose a mobile</h2>
+  <div class="cards-section">
+    <div class="cards-title text-center" >
+      <h2>Choose a mobile</h2>
+    </div>
 
       <div class="cards-container">
         <% @mobiles.each do |mobile| %>
 
-            <div class="card">
-              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
-                <%= link_to "#{mobile.brand}", mobile_path(mobile), class: 'card-category' %>
-              </div>
+          <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
+              <%= link_to "#{mobile.brand}", mobile_path(mobile), class: 'card-category' %>
+            </div>
 
-              <div class="card-footer">
-                <p><%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %></p>
-                <div class="controls">
-                  <a href="#"><i class="fa fa-star"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                  <a href="#"><i class="fa fa-share"></i></a>
-                </div>
+            <div class="card-footer">
+              <p><%= link_to "#{mobile.brand}", mobile_path(mobile), class: 'card-link' %></p>
+              <p><%= link_to "#{mobile.model}", mobile_path(mobile), class: 'card-link' %></p>
+              <p class="owner"><%= "#{mobile.user.first_name}"%></p>
+              <div class="controls">
+                <a href=<%= "mailto:cecile.dezy@gmail.com?subject=Check%20this%20phone%20out!&amp;body=Hey%20Cécile,%20I%20found%20this%20phone%20on%20Rent%20a%20mobile!%20Seems%20great%20to%20me,%20but%20can%20you%20check%20it%20out%20and%20get%20back%20to%20me?%20Thanks!%20Jerem" %>><i class="fa fa-share"></i></a>
               </div>
             </div>
+          </div>
         <% end %>
       </div>
     </div>
+    <div class="map-container">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 85vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
   </div>
 <!--  <div class="map-container">MAP</div> -->
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+
 </div>
 
 
