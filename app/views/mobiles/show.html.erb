@@ -1,15 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-offset-1">
+    <div class="col-sm-12 col-md-offset-1">
       <div class="mobile-infos">
-        <h1><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
+        <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
       </div>
-      <div class="card-mobile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
-        <p><%= "description: #{@mobile.content}" %></p>
-        <% if policy(@mobile.bookings.new).create? %>
-          <%= link_to "book this mobile now", new_mobile_booking_path(@mobile)  %>
-        <% end %>
-      </div>
+    </div>
+  </div>
+
+<!-- colonne de gauche -->
+  <div class="wrapper">
+    <div class="card-mobile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
+    </div>
+
       <div class="card-mobile-reviews">
         <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
         <% @reviews.each do |review| %>
@@ -17,7 +19,7 @@
             <strong>
               <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
             </strong>
-            <span>review.created_at</span>
+            <span><%= review.created_at %></span>
           </div>
           <div class="stars">
             <%= "#{review.star}/5"  %>
@@ -28,17 +30,29 @@
         <% end %>
         <p>see all reviews</p>
       </div>
-    </div>
-    <div class="col-sm-3 col-sm-offset-1">
-      <div class="booking-card">
 
+<!-- colonne de droite -->
+      <div class="mobile-user">
+        <h2> Rented by <%= @mobile.user.first_name %> </h2>
       </div>
-      <div class="map">
 
+      <div class="mobile-booking">
+        <% if policy(@mobile.bookings.new).create? %>
+          <%= link_to "book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary' %>
+        <% end %>
       </div>
-    </div>
+
+      <div class="content-mobile">
+        <p><%= "description: #{@mobile.content}" %></p>
+      </div>
+
   </div>
-</div>
+  <div class="button-back-to-list">
+    <%= link_to "Back to list", root_path %>
+  </div>
+
+
+      <div class="map"></div>
 
 <% if policy(@mobile).update? %>
   <%= link_to "Edit information", edit_mobile_path %>

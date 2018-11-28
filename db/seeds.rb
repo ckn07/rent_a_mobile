@@ -131,7 +131,7 @@ reviewOne = Review.new(
   content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
   star: 4
   )
-reviewOne.booking_id = mobOne.user_id
+reviewOne.booking = bookingOne
 reviewOne.save!
 
 puts "Review created by Benoit"
@@ -141,6 +141,6 @@ reviewTwo = Review.new(
   content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
   star: 5
   )
-reviewTwo.booking_id = mobTwo.user_id
+reviewTwo.booking= bookingTwo
 reviewTwo.save!
 puts "Review created by Cecile "
