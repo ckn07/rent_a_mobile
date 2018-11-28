@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-offset-1">
+    </div>
+  </div>
+
+<!-- First Row -->
+  <div class="container antinavbar">
       <div class="mobile-infos">
         <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
       </div>
-    </div>
-  </div>
-  <
-
-<!-- First Row -->
-  <div class="container">
     <div class="flexbox">
       <div class="item-1">
-        <div class="card-mobile-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>') height: 300, width: 400, crop: :fill ;">
+        <div class="card-mobile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
         </div>
       </div>
       <div class="item-2">
