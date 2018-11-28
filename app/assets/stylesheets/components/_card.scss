@@ -36,13 +36,13 @@
   background-size: cover;
   color: white;
   position: relative;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: -30px;
+  left: 3px;
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
