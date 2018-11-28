@@ -9,7 +9,8 @@ class MobilesController < ApplicationController
     @markers = @mobiles.map do |mobile|
       {
         lng: mobile.longitude,
-        lat: mobile.latitude
+        lat: mobile.latitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { mobile: mobile })
       }
     end
   end
