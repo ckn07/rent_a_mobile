@@ -36,34 +36,6 @@
                       input_html: { autocomplete: "address" },
                       class:"form-controls" %>
         </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <%= f.input :postcode,
-                          required: true,
-                          autofocus: true ,
-                          input_html: { autocomplete: "postcode" },
-                          class:"form-controls" %>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <%= f.input :city,
-                          required: true,
-                          autofocus: true ,
-                          input_html: { autocomplete: "city" },
-                          class:"form-controls" %>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-        <%= f.input :user_location,
-                    required: true,
-                    autofocus: true ,
-                    input_html: { autocomplete: "user_location" },
-                    label: "Country",
-                    class:"form-controls" %>
-        </div>
         <div class="form-group">
           <%= f.input :email,
                       required: true,
