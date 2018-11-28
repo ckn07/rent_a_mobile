@@ -1,27 +1,31 @@
 // Card de l'index
+.card-index-layout {
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-between;
+}
+
+.cards-section {
+  flex-grow: 1;
+}
+
+.cards-title {
+  padding: 10px;
+}
 
 .cards-container {
   display: flex;
+  flex: 0 0 67%;
 }
 
-// .card {
-//   height: 175px;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-position: center;
-//   color: white;
-//   border: 1px solid red;
-//   margin-bottom: 10px;
-//   text-align: center;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
+.flex-item {
+  display: flex;
+}
 
 .card {
-  flex: 1 1 10%;
-  margin: 10px;
-  border-radius: 1px;
+  flex: 1 1 15%;
+  margin: 20px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   background-size: cover !important;
@@ -32,6 +36,7 @@
   background-size: cover;
   color: white;
   position: relative;
+  border-radius: 5px;
 }
 
 .card-category {
@@ -52,21 +57,6 @@
     padding: 10px;
 }
 
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-// }
-
-// .card-link:hover {
-//   opacity: 0.1;
-// }
-
 // Card de la show mobile
 .card-mobile {
   height: 275px;
@@ -78,4 +68,12 @@
   border: 1px solid blue;
   padding: 15px;
   margin: 15px;
+}
+
+.fa:hover {
+  color: rgb(41, 198, 170);
+}
+
+a:hover {
+  color: rgb(41, 198, 170);
 }

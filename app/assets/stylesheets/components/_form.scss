@@ -14,6 +14,12 @@ label {
   margin: 10px;
 }
 
+.btn-form:hover {
+  background-color: #29c6aa;
+  color: white;
+  margin: 10px;
+}
+
 a {
   text-align: text-center;
   color: #2ed3b5;
@@ -24,4 +30,3 @@ a {
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-
