@@ -29,3 +29,4 @@ class MobilePolicy < ApplicationPolicy
     record.user == user
   end
 end
+
