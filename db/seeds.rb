@@ -21,37 +21,26 @@ jeremy = User.create!(email: "jeremy.jouffroy@gmail.com",
  first_name: "Jeremy",
  last_name: "Jouffroy",
  phone_number: "0683411488",
- address: "26 rue Edouard Vaillant",
- postcode: "93140",
- city: "Bondy",
- user_location: "France")
+ address: "26 rue Edouard Vaillant, 93140 Bondy, France")
 benoit = User.create!(email: "benoitdelest@gmail.com",
  password: "123456",
  first_name: "Benoit",
  last_name: "Delest",
  phone_number: "0609216014",
- address: "3 rue de la Joncquiere",
- postcode: "75017",
- city: "Paris",
- user_location: "France")
+ address: "3 rue de la Joncquiere, 75017 Paris, France")
 cecile = User.create!(email: "cecile.dezy@gmail.com",
  password: "123456",
  first_name: "Cécile",
  last_name: "Dezy",
  phone_number: "0677136554",
- address: "6 rue Euryale Dehaynin",
- postcode: "75019",
- city: "Paris",
- user_location: "France")
+  address: "6 rue Euryale Dehaynin, 75019 Paris, France "
+)
 chris = User.create!(email: "christophe@noujaim.com",
  password: "123456",
  first_name: "Christophe",
  last_name: "Noujaim",
  phone_number: "0663420512",
- address: "Pigalle 69b",
- postcode: "75018",
- city: "Paris",
- user_location: "France")
+   address: "Pigalle 69b, 75018 Paris, France")
 
 puts "4 users created"
 
@@ -61,10 +50,7 @@ mobOne = Mobile.new(brand: "Samsung",
   model: "Note 8",
   daily_price: "5",
   photo: "myr1ofzlfvgayoy7bmey",
-  address: "26 rue Edouard Vaillant",
-  postcode: "93140",
-  city: "Bondy",
-  mobile_location: "France",
+  address: "26 rue Edouard Vaillant, 93140 Bondy, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobOne.user_id = jeremy.id
 mobOne.save!
@@ -73,10 +59,7 @@ mobTwo = Mobile.new(brand: "Apple",
   model: "Iphone 7 +",
   daily_price: "2",
   photo: "myr1ofzlfvgayoy7bmey",
-  address: "3 rue de la Joncquiere",
-  postcode: "75017",
-  city: "Paris",
-  mobile_location: "France",
+  address: "3 rue de la Joncquiere, 75017 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobTwo.user_id = benoit.id
 mobTwo.save!
@@ -86,10 +69,7 @@ mobThree = Mobile.new(brand: "Samsung",
   model: "galaxy s7",
   daily_price: "1",
   photo: "myr1ofzlfvgayoy7bmey",
-  address: "6 rue Euryale Dehaynin",
-  postcode: "75019",
-  city: "Paris",
-  mobile_location: "France",
+  address: "6 rue Euryale Dehaynin, 75019 Paris, France ",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobThree.user_id = cecile.id
@@ -99,10 +79,7 @@ mobFour = Mobile.new(brand: "One+",
   model: "3T",
   daily_price: "3",
   photo: "myr1ofzlfvgayoy7bmey",
-  address: "Pigalle 69b",
-  postcode: "75018",
-  city: "Paris",
-  mobile_location: "France",
+  address: "Pigalle 69b, 75018 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobFour.user_id = chris.id
