@@ -13,9 +13,9 @@
       <% @mobiles.each do |mobile| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path mobile.photo %>');">
-  <!--           <div class="card-description"> -->
+            <div class="card-description">
               <h3><%= "#{mobile.brand} - #{mobile.model}" %></h3>
-  <!--           </div> -->
+            </div>
               <%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %>
           </div>
         </div>

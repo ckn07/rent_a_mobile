@@ -10,7 +10,6 @@ class MobilesController < ApplicationController
     authorize @mobile
     @mobile = Mobile.find(params[:id])
     @reviews = @mobile.reviews # => array of reviews
-
   end
 
   def new
@@ -56,3 +55,4 @@ class MobilesController < ApplicationController
     params.require(:mobile).permit(:brand, :model, :daily_price, :address, :title, :body, :photo)
   end
 end
+
