@@ -7,3 +7,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 flatpickr(".datePicker", {});
 initMapbox();
+
+import { initAutocomplete } from '../plugins/init_autocomplete.js';
+initAutocomplete();
