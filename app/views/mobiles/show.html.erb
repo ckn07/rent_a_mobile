@@ -16,11 +16,11 @@
       </div>
       <div class="item-2">
         <div class="mobile-user">
-          <h2> Rented by <%= @mobile.user.first_name %> </h2>
+          <h4 align="center"> Owner : <%= @mobile.user.first_name %> </h4>
         </div>
-        <div class="mobile-booking">
+        <div class="mobile-booking text-center">
           <% if policy(@mobile.bookings.new).create? %>
-            <%= link_to "book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary' %>
+            <%= link_to "Book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary', style: "padding: 30px"  %>
           <% end %>
         </div>
       </div>

@@ -9,8 +9,17 @@
 }
 
 .item-2 {
-  width: 50%
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
 
+.mobile-user {
+margin-bottom: 30px;
+}
+
+.mobile-booking .btn {
+  display: inline-block;
 }
 
 .antinavbar {
