@@ -19,6 +19,9 @@ class MobilesController < ApplicationController
     authorize @mobile
     @mobile = Mobile.find(params[:id])
     @reviews = @mobile.reviews # => array of reviews
+    @user = current_user
+    @booking = @mobile.bookings.new
+    authorize @booking
   end
 
   def new
@@ -61,7 +64,7 @@ class MobilesController < ApplicationController
   end
 
   def mobile_params
-    params.require(:mobile).permit(:brand, :model, :daily_price, :address, :title, :body, :photo)
+    params.require(:mobile).permit(:brand, :model, :content, :daily_price, :address, :photo)
   end
 end
 

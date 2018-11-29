@@ -4,6 +4,7 @@ class Mobile < ApplicationRecord
   has_many :reviews, through: :bookings, dependent: :destroy
   validates :brand, presence: true
   validates :model, presence: true
+  validates :content, presence: true
   validates :daily_price, presence: true
   validates :photo, presence: true
   validates :address, presence: true
