@@ -58,6 +58,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-left: 40px;
 }
 
 #new_booking {
@@ -73,6 +74,10 @@
   display: inline-block;
   background-color: #F4F4F4;
   color: #2ed3b5;
+}
+
+.mobile-booking-text {
+  padding-bottom: 10px;
 }
 
 .antinavbar {
@@ -108,4 +113,10 @@
 .btn-book:hover {
   color: #56B4D3;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-mobile-reviews {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
 }
