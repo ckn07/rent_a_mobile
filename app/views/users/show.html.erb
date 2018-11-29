@@ -1,0 +1,118 @@
+<div class='container flexbox' style='padding-top: 70px'>
+
+<!-- colonne de gauche 25% -->
+  <div class="container-user-info">
+    <div class="profile-pic">
+      <img src="image_tag banner-phone.png" class='profile_pic'>
+    </div>
+    <div class="verified-info">
+      <div class="card-header">Verified info</div>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.phone_number %></p>
+    </div>
+  </div>
+
+<!-- colonne de droite 75% -->
+  <div class="container-bookings">
+    <div class="phones-inventory">
+      <div class="history-card-header">Your phones</div>
+      <div class="your-phones flexbox">
+          <% @user.mobiles.each do |mobile| %>
+            <div class="small_phone_img">
+               <img src='../images/logo.png' class='small_phone_img'>
+            </div>
+            <div> <%= mobile.brand %> <%= mobile.model %></div>
+            <div> <%= mobile.daily_price %></div>
+          <% end %>
+          <%= link_to "edit", ""  %>
+          <%= link_to "delete", ""  %>
+      </div>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="lending-history">
+      <div class="card-header"></div>
+      <div class="lending-bookings"></div>
+    </div>
+
+    <div class="renting-history">
+      <div class="card-header"></div>
+      <div class="renting-bookings"></div>
+    </div>
+
+
+
+</div>
+
+
+<!-- <html>
+ <head>
+   <meta charset="utf-8">
+   <title>Inbox - Message design</title>
+   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+   <link rel="stylesheet" href="css/style.css">
+ </head>
+ <body>
+   <div class="container">
+     <h1>Your messages</h1>
+       <div class="tabs">
+         <a href="#" class="tab active">Traveling</a>
+         <a href="#" class="tab">Hosting</a>
+       </div>
+     <ul class="inbox">
+       <li class="message">
+       <img src="images/gab.png" class="avatar">
+         <div class="message-name">
+         <h2>Gab Dehan</h2>
+         <p>10/07/17</p>
+         </div>
+         <div class="message-body">
+         <h2>I am not sure yet!</h2>
+         <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
+         </div>
+         <div class="message-status">
+         <h2 class="status pending">Pending</h2>
+         <p>€345</p>
+         </div>
+       </li>
+       <li class="message">
+       <img src="images/cecile.png" class="avatar">
+         <div class="message-name">
+         <h2>Cecile Veneziani</h2>
+         <p>23/09/17</p>
+         </div>
+         <div class="message-body">
+         <h2>I’ll be glad to welcome you in my cosy flat</h2>
+         <p>I’ll be glad to welcome you in my cosy flat in Lille. When are you arriving exactly?</p>
+         </div>
+         <div class="message-status">
+         <h2 class="status accepted">Accepted</h2>
+         <p>€345</p>
+         </div>
+       </li>
+       <li class="message">
+       <img src="images/jad.png" class="avatar">
+         <div class="message-name">
+         <h2>Jad Joubran</h2>
+         <p>19/08/17</p>
+         </div>
+         <div class="message-body">
+         <h2>Hey man! I'm sorry...</h2>
+         <p>Hey man! I'm sorry... I'll be in Amsterdam at these dates.</p>
+         </div>
+         <div class="message-status">
+         <h2 class="status declined">Declined</h2>
+         <p>€560</p>
+         </div>
+       </li>
+     </ul>
+   </div>
+ </body>
+</html> -->
