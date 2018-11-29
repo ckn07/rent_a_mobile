@@ -10,4 +10,6 @@ flatpickr(".datePicker", {});
 initMapbox();
 
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
+import { initAutocomplete2 } from '../plugins/init_autocomplete.js';
 initAutocomplete();
+initAutocomplete2();
