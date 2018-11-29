@@ -83,29 +83,26 @@ a:hover {
   border-radius: 5px;
   min-height: 300px;
   padding: 5px 15px;
-.h3{
-    font-size: 14px !important;
-    color:#2ed3b5 !important;
+.h3 {
+  font-size: 14px !important;
+  color:#2ed3b5 !important;
   }
 .h2 {
   font-size: 18px !important;
-    color:#2ed3b5 !important;
+  color:#2ed3b5 !important;
+  }
 }
 
-}
 
-
-
-.white-thumb{
+.white-thumb {
       background: white !important;
       padding: 10px 10px;
       min-height: 310px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
     }
-  .card-title-jj{
-  min-height: 25px;
 
+  .card-title-jj {
+  min-height: 25px;
   }
 
 .card-title-owner-jj{
@@ -119,17 +116,18 @@ a:hover {
   // bottom: 5px;
   // }
 
- .card-content-jj{
+ .card-content-jj {
   font-size: 11px;
   }
 
-  .card-link-jj{
+  .card-link-jj {
     position:absolute;
     bottom: 0px;
     top: 0px;
     right: 0px;
     left: 0px;
   }
+
 .the-map{
 
 }
@@ -142,6 +140,6 @@ a:hover {
   padding: 20px 20px;
 }
 
-hr{
+hr {
 border-top: 1px solid #d5d5d5;
 }
