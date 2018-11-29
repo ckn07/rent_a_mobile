@@ -5,6 +5,7 @@ class Mobile < ApplicationRecord
   validates :brand, presence: true
   validates :model, presence: true
   validates :daily_price, presence: true
+  validates :photo, presence: true
   validates :address, presence: true
   mount_uploader :photo, PhotoUploader
   geocoded_by :address

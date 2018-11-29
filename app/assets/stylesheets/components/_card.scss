@@ -24,8 +24,8 @@
 }
 
 .card {
-  flex: 1 1 15%;
-  margin: 20px;
+  flex: 0 1 30%;
+  margin: 30px 15px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
@@ -33,7 +33,7 @@
 }
 
 .card-body {
-  height: 180px;
+  height: 290px;
   background-size: cover;
   color: white;
   position: relative;
@@ -76,4 +76,12 @@
 
 a:hover {
   color: rgb(41, 198, 170);
+}
+
+.owner{
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+    color: gray;
+    font-size: 14px;
 }
