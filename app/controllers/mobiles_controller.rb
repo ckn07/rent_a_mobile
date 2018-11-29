@@ -37,7 +37,7 @@ class MobilesController < ApplicationController
     @mobile = Mobile.new(mobile_params)
     @mobile.user = current_user
     authorize @mobile
-    if @mobile.save!
+    if @mobile.save
       redirect_to mobile_path(@mobile)
     else
       render :new
