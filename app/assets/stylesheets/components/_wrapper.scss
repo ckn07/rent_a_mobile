@@ -2,6 +2,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 30px;
+}
+.mobile-global {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: 30px;
+}
+
+.mobile-global h2 {
+  background-size: 24px;
 }
 
 .mobile-details{
@@ -9,6 +21,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.mobile-name {
+  padding: 10px;
 }
 
 .booking-details {
@@ -23,7 +39,7 @@
 .mobile-booking {
   background-color: #2ed3b5;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .mobile-booking .btn {
@@ -34,6 +50,10 @@
 
 .mobile-booking h3 {
   font-weight: normal;
+}
+.mobile-booking h2 {
+  font-weight: normal;
+  font-size: 24px;
 }
 
 .antinavbar {
@@ -46,7 +66,14 @@
 // Card de la show mobile
 .mobile-pic {
   flex-grow: 1;
-  height: 500px;
+  // height: 500px;
   background-size: cover !important;
   background-position: center;
+  width: 100%;
+}
+
+.price-booking {
+  background-color:  #F4F4F4;
+  color: #2ed3b5;
+  border-radius: 5px;
 }

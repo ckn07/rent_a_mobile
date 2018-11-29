@@ -1,25 +1,31 @@
 <div class="container antinavbar">
-  <div class="mobile-infos">
-    <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
-  </div>
+
 
 <!-- First Row -->
+  <div class="mobile-global">
+
+    <div class="mobile-name">
+      <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
+    </div>
 
     <div class="flexbox">
 
       <div class="mobile-details">
 
-        <div class="mobile-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
+        <div class="mobile-pic" style="background-image: url('<%= cl_image_path @mobile.photo %>'); width: 100%">
         </div>
+
         <div class="mobile-infos">
 
           <div class="mobile-user">
             <h4 align="center"> Owner : <%= @mobile.user.first_name %></h4>
           </div>
+
           <div class="content-mobile">
             <h2>Description : </h2>
             <p><%= @mobile.content %></p>
           </div>
+
         </div>
       </div>
 
@@ -28,47 +34,58 @@
           <% if policy(@mobile.bookings.new).create? %>
 
             <div class="text-center">
-                    <h2>Book the<br></h2>
-                      <h2><%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
-                      <h3>for as low as €<span id="daily_price"><%="#{@mobile.daily_price}"%></span> per day</h3>
-                  </div>
+              <h2>Book the<br></h2>
+                <h2><%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
+                <h3>for as low as €<span id="daily_price"><%="#{@mobile.daily_price}"%></span> per day</h3>
+            </div>
 
-                  <%= simple_form_for [@mobile, @booking] do |f| %>
+            <div class="booking-form">
 
-                    <div class="form-inputs">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <%= f.input :minDate,
-                                        as: :string,
-                                        input_html: {class: "datePicker"},
-                                        label: "From" %>
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <%= f.input :maxDate,
-                                        as: :string,
-                                        input_html: {class: "datePicker"},
-                                        label: "To" %>
-                          </div>
-                        </div>
+              <%= simple_form_for [@mobile, @booking] do |f| %>
+
+                <div class="form-inputs">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.input :minDate,
+                                    as: :string,
+                                    input_html: {class: "datePicker"},
+                                    label: "From" %>
                       </div>
                     </div>
-                    <div id="price" class="text-center"></div>
-                    <div class="form-actions text-center">
-                      <%= f.button :submit, "Book this phone", class: "btn-form" %>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.input :maxDate,
+                                    as: :string,
+                                    input_html: {class: "datePicker"},
+                                    label: "To" %>
+                      </div>
                     </div>
+                  </div>
 
-                  <% end %>
+                  <div id="price" class="text-center"></div>
 
+                  <div class="form-actions text-center">
+                    <%= f.button :submit, "Book this phone", class: "btn-form" %>
+                  </div>
                 </div>
+
+              <% end %>
+            </div>
+
+          <% else %>
+
+            <div class="text-center">
+              <h2>Your phone hasn't been booked yet!</h2>
+            </div>
+
           <% end %>
         </div>
       </div>
     </div>
 
-<!-- Second Row -->
+  <!-- Second Row -->
     <div class="flexbox">
 
       <div class="card-mobile-reviews">
@@ -94,33 +111,35 @@
         <p>see all reviews</p>
       </div>
 
-      <div
-        id="map"
-        style="width: 60%;
-        height: 40vh;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="map-container-show">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 70vh;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
+
+  <!--   fin du container 2-->
+    <div class="buttons">
+      <%= link_to "Back to list", root_path, class: "btn btn-form" %>
+
+    <% if policy(@mobile).update? %>
+      <%= link_to "Edit information", edit_mobile_path, class: "btn btn-form" %>
+    <% end %>
+
+    <% if policy(@mobile).destroy? %>
+      <%= link_to "Delete this mobile offer", mobile_path(@mobile),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "btn btn-form" %>
+    <% end %>
+    </div>
   </div>
+</div>
 
-<!--   fin du container 2-->
-  <div class="button-back-to-list">
-    <%= link_to "Back to list", root_path %>
-  </div>
-
-
-<% if policy(@mobile).update? %>
-  <%= link_to "Edit information", edit_mobile_path %>
-<% end %>
-
-<% if policy(@mobile).destroy? %>
-  <%= link_to "Delete this mobile offer", mobile_path(@mobile),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-
-
-<% end %>
 <script type="text/javascript">
 
 
@@ -146,7 +165,7 @@ displayTotalPrice(totalPrice);
 };
 
 const displayTotalPrice = (element) => {
-  price.insertAdjacentHTML('beforeend', `<div class="alert alert-warning">The total price for this booking will be <strong>${element}</strong> Euros</div>`);
+  price.insertAdjacentHTML('beforeend', `<div class="price-booking">The total price for this booking will be <strong>${element}</strong> Euros</div>`);
 };
 
 maxDate.addEventListener('blur', calculateThePrice);
