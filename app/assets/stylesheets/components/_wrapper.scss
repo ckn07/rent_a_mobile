@@ -15,12 +15,10 @@
 
 .mobile-global h2 {
   font-size: 24px;
-  line-height: 5px;
 }
 
 .mobile-global h3 {
   font-size: 20px;
-  line-height: 10px;
 }
 
 .mobile-details{
@@ -63,17 +61,10 @@
 
 #new_booking {
   text-align: center;
-
 }
 
 .booking-form {
   text-align: center;
-}
-
-.mobile-booking .btn {
-  display: inline-block;
-  background-color: #F4F4F4;
-  color: #2ed3b5;
 }
 
 .mobile-booking-text {
@@ -85,12 +76,12 @@
 }
 
 .mobile-infos {
-    flex: 1 1 150%;
-    padding: 18px;
-    margin: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    line-height: 22px;
+  flex: 1 1 150%;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 // Card de la show mobile
@@ -106,17 +97,27 @@
   color: white;
 }
 
-.buttons {
-  text-align: center;
-}
-
-.btn-book:hover {
-  color: #56B4D3;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
 .card-mobile-reviews {
     width: 66%;
     display: flex;
     flex-direction: column;
+}
+
+.no-booking h2 {
+  line-height: 10px;
+}
+
+.no-booking {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-booking-links {
+  padding-top: 15px;
+}
+
+.no-booking-links .fab {
+  color: white;
+  font-size: 30px;
+  padding: 30px;
 }

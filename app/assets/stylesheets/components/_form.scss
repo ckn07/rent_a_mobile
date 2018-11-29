@@ -35,16 +35,12 @@ label {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.btn-form {
-  background-color: #2ed3b5;
-  color: white;
-  margin: 10px;
+.form-group {
+  margin: 5px 0px;
 }
 
-.btn-form:hover {
-  background-color: #29c6aa;
-  color: white;
-  margin: 10px;
+.form-control {
+  border-radius: 5px;
 }
 
 a {
