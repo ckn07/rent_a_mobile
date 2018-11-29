@@ -4,6 +4,12 @@
   min-height: 100vh;
 }
 
+.form-inputs.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 label {
   font-weight: lighter;
 }
@@ -23,6 +29,10 @@ label {
 a {
   text-align: text-center;
   color: #2ed3b5;
+}
+
+.form-group {
+  width: 200px;
 }
 
 .form-control:focus {
