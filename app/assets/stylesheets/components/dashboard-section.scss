@@ -1,0 +1,69 @@
+.dashboard-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.dashboard-section:last-child {
+  border-bottom: none;
+}
+.dashboard-section-body {
+  flex-grow: 1;
+}
+.dashboard-section-brand {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.dashboard-section-brand h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.dashboard-section-brand p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.dashboard-section-price {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.dashboard-section-price {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.dashboard-section-price strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.dashboard-section-price p {
+  margin: 6px 0;
+}
+.dashboard-section-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
+
+.dashboard-header {
+  margin-left: 10px;
+  padding-left: 10px;
+  background-color: $green;
+  color: white;
+}
+
+.dashboard-phone-img {
+  width: 100px;
+  height: 100px;
+}
+

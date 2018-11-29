@@ -82,10 +82,17 @@ a:hover {
   position: relative;
   border-radius: 5px;
   min-height: 300px;
+<<<<<<< HEAD
   padding: 5px 15px;
 .h3 {
   font-size: 14px !important;
   color:#2ed3b5 !important;
+=======
+  padding: 5px 20px;
+.h3{
+    font-size: 14px !important;
+    color:#2ed3b5 !important;
+>>>>>>> eacc411bb9321c4a07a40d4fbe70c7e5efe40a2b
   }
 .h2 {
   font-size: 18px !important;
@@ -142,4 +149,10 @@ a:hover {
 
 hr {
 border-top: 1px solid #d5d5d5;
+}
+
+.img-card-jj{
+ max-height: 300px;
+    min-height: 300px;
+    padding-top: 25px;
 }
