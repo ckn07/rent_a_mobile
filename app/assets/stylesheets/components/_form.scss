@@ -1,11 +1,38 @@
-.flex-container {
+#flex-container-signup {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  align-items: center;
+  // margin-bottom: 20px;
+  // margin-top: 20px;
+  min-height: calc(100vh - 20px);
+}
+
+#flex-container-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-bottom: 20px;
+  // margin-top: 20px;
+  min-height: calc(100vh - 70px);
+}
+
+.form-inputs.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 label {
   font-weight: lighter;
+}
+
+.registration-box {
+  background-color: #ffffff;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .btn-form {
@@ -23,6 +50,10 @@ label {
 a {
   text-align: text-center;
   color: #2ed3b5;
+}
+
+.form-group {
+  width: 200px;
 }
 
 .form-control:focus {

@@ -3,14 +3,18 @@ class MobilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @mobiles = policy_scope(Mobile).order(created_at: :desc)
-    @mobiles = Mobile.where.not(latitude: nil, longitude: nil)
-
+    if params[:query].present?
+      @mobiles = policy_scope(Mobile).order(created_at: :desc)
+      @mobiles = Mobile.where.not(latitude: nil, longitude: nil).search_mobiles("%#{params[:query]}%")
+    else
+      @mobiles = policy_scope(Mobile).order(created_at: :desc)
+      @mobiles = Mobile.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @mobiles.map do |mobile|
       {
         lng: mobile.longitude,
         lat: mobile.latitude,
-        # infoWindow: render_to_string(partial: "infowindow", locals: { mobile: mobile })
+        infoWindow: render_to_string(partial: "infowindow", locals: { mobile: mobile })
       }
     end
   end
@@ -19,6 +23,9 @@ class MobilesController < ApplicationController
     authorize @mobile
     @mobile = Mobile.find(params[:id])
     @reviews = @mobile.reviews # => array of reviews
+    @user = current_user
+    @booking = @mobile.bookings.new
+    authorize @booking
   end
 
   def new
@@ -61,7 +68,7 @@ class MobilesController < ApplicationController
   end
 
   def mobile_params
-    params.require(:mobile).permit(:brand, :model, :daily_price, :address, :title, :body, :photo)
+    params.require(:mobile).permit(:brand, :model, :content, :daily_price, :address, :photo)
   end
 end
 

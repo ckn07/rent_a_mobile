@@ -33,16 +33,39 @@ cecile = User.create!(email: "cecile.dezy@gmail.com",
  first_name: "Cécile",
  last_name: "Dezy",
  phone_number: "0677136554",
-  address: "6 rue Euryale Dehaynin, 75019 Paris, France "
-)
+  address: "6 rue Euryale Dehaynin, 75019 Paris, France ")
 chris = User.create!(email: "christophe@noujaim.com",
  password: "123456",
  first_name: "Christophe",
  last_name: "Noujaim",
  phone_number: "0663420512",
-   address: "Pigalle 69b, 75018 Paris, France")
+   address: "20 Boulevard de Clichy, 75018 Paris, France")
+jerem = User.create!(email: "jeremy.jouffroy+1@gmail.com",
+ password: "123456",
+ first_name: "Jer",
+ last_name: "Jouf",
+ phone_number: "0683411489",
+ address: "4 rue abel, 75012 Paris, France")
+ben = User.create!(email: "benoitdelest+1@gmail.com",
+ password: "123456",
+ first_name: "Ben",
+ last_name: "Deleste",
+ phone_number: "0609216015",
+ address: "3 rue des moines, 75017 Paris, France")
+cess = User.create!(email: "cecile.dezy+1@gmail.com",
+ password: "123456",
+ first_name: "Céss",
+ last_name: "Dess",
+ phone_number: "0677136555",
+  address: "38 rue Euryale Dehaynin, 75019 Paris, France")
+cricris = User.create!(email: "christophenoujaim@gmail.com",
+ password: "123456",
+ first_name: "Chris",
+ last_name: "NouNou",
+ phone_number: "0663420513",
+  address: "15 boulevard Saint-Germain, 75005 Paris, France")
 
-puts "4 users created"
+puts "8 users created"
 
 
 puts "creating 1 mobile for each user"
@@ -52,17 +75,26 @@ mobOne = Mobile.new(brand: "Samsung",
   address: "26 rue Edouard Vaillant, 93140 Bondy, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobOne.user_id = jeremy.id
-mobOne.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543409621/meachh2bclcj1fetka7t.jpg"
+array_photo = ["https://res.cloudinary.com/dp22wwxuy/image/upload/v1543409621/meachh2bclcj1fetka7t.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543326588/qojtv1zwe3giwsi9erou.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410214/mai7zrsapni9jrubbsqn.png",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410345/fa3hg7q6j7ng5phzryyv.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543491683/huawei_-_P20.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543420579/wkuywj1oclbpfygxlidr.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543492170/motorola-one-1000.png",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543492236/lg_cellphones_G7-31866.png",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543492304/wiko_lenny_2_noir.jpg"]
+mobOne.remote_photo_url = array_photo.sample
 
 mobOne.save!
 
 mobTwo = Mobile.new(brand: "Apple",
   model: "Iphone 7 +",
   daily_price: "2",
-  address: "3 rue de la Joncquiere, 75017 Paris, France",
+  address: "3 rue de la Jonquiere, 75017 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobTwo.user_id = benoit.id
-mobTwo.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543326588/qojtv1zwe3giwsi9erou.jpg"
+mobTwo.remote_photo_url = array_photo.sample
 
 mobTwo.save!
 
@@ -71,29 +103,69 @@ mobThree = Mobile.new(brand: "Samsung",
   model: "galaxy s7",
   daily_price: "1",
   address: "6 rue Euryale Dehaynin, 75019 Paris, France ",
-  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "super mobile vraiment même si Samsung ça pue. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobThree.user_id = cecile.id
-mobThree.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410214/mai7zrsapni9jrubbsqn.png"
+mobThree.remote_photo_url = array_photo.sample
 
 mobThree.save!
 
 mobFour = Mobile.new(brand: "One+",
   model: "3T",
   daily_price: "3",
-  address: "Pigalle 69b, 75018 Paris, France",
+  address: "20 Boulevard de Clichy, 75018 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobFour.user_id = chris.id
-mobFour.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410345/fa3hg7q6j7ng5phzryyv.jpg"
+mobFour.remote_photo_url = array_photo.sample
 
 mobFour.save!
 
+mobFive = Mobile.new(brand: "Huawei",
+  model: "P20",
+  daily_price: "15",
+  address: "4 rue Abel, 75012 Pars, France",
+  content: "Mobile de chinois qui vous espionne trop cool,ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
-puts "4 mobiles saved"
+mobFive.user_id = jerem.id
+mobFive.remote_photo_url = array_photo.sample
 
+mobFive.save!
 
+mobSix = Mobile.new(brand: "Motorola",
+  model: "X475HEN",
+  daily_price: "10",
+  address: "2 rue des moines, 75017 Paris, France",
+  content: "Mobile cool et en bon état trop cool, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
+mobSix.user_id = ben.id
+mobSix.remote_photo_url = array_photo.sample
+
+mobSix.save!
+
+mobSeven = Mobile.new(brand: "LG",
+  model: "P430",
+  daily_price: "22",
+  address: "38 rue Euryale Dehaynin, 75019 Paris, France",
+  content: "LG c'est cool c'est la base et il est sans rayures.consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+
+mobSeven.user_id = cess.id
+mobSeven.remote_photo_url = array_photo.sample
+
+mobSeven.save!
+
+mobEight = Mobile.new(brand: "Wyko",
+  model: "France",
+  daily_price: "6",
+  address: "15 boulevard Saint-Germain, 75005 Paris, France",
+  content: "Des fois il marche, des fois il marche pas. C'est normal c'est un modèle Français")
+
+mobEight.user_id = cricris.id
+mobEight.remote_photo_url = array_photo.sample
+
+mobEight.save!
+
+puts "8 mobiles saved"
 
 
 puts 'Creating a booking from Jeremy phones to Benoit.'
@@ -124,6 +196,19 @@ bookingTwo.user_id = cecile.id
 bookingTwo.save!
 puts "Wow Chris has rented his phones to Cecile from #{bookingTwo.minDate} to #{bookingTwo.maxDate} for #{bookingTwo.total_price}"
 
+puts 'Creating a booking from Chris phones to Cecile.'
+
+bookingThree = Booking.new(
+minDate: Faker::Date.backward(14),
+maxDate: Date.today
+  )
+bookingThree.duration = (bookingThree.maxDate - bookingThree.minDate).to_i
+bookingThree.mobile_id = mobEight.id
+bookingThree.total_price = (mobSix.daily_price * bookingThree.duration).to_i
+bookingThree.user_id = ben.id
+bookingThree.save!
+puts "Wow Cricris has rented his phones to Ben from #{bookingTwo.minDate} to #{bookingTwo.maxDate} for #{bookingTwo.total_price}"
+
 
 
 puts "Creating a review from Benoit about jeremy phone"
@@ -144,3 +229,12 @@ reviewTwo = Review.new(
 reviewTwo.booking= bookingTwo
 reviewTwo.save!
 puts "Review created by Cecile "
+
+puts "Creating a booking from Cricris phones to Ben."
+reviewThree = Review.new(
+  content: "#{Faker::FamousLastWords.last_words}. Le mec m'a loué un téléphone qui marche pas s'ba***d.commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
+  star: 2
+  )
+reviewThree.booking= bookingThree
+reviewThree.save!
+puts "Review created by Ben "

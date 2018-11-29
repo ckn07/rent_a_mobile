@@ -58,18 +58,6 @@
     padding: 10px;
 }
 
-// Card de la show mobile
-.card-mobile {
-  height: 275px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  padding: 15px;
-  margin: 15px;
-}
-
 .fa:hover {
   color: rgb(41, 198, 170);
 }
@@ -84,4 +72,76 @@ a:hover {
     left: 10px;
     color: gray;
     font-size: 14px;
+}
+
+
+
+.card-jj{
+  // background: white;
+  padding: 3px 3px;
+  position: relative;
+  border-radius: 5px;
+  min-height: 300px;
+  padding: 5px 15px;
+.h3{
+    font-size: 14px !important;
+    color:#2ed3b5 !important;
+  }
+.h2 {
+  font-size: 18px !important;
+    color:#2ed3b5 !important;
+}
+
+}
+
+
+
+.white-thumb{
+      background: white !important;
+      padding: 10px 10px;
+      min-height: 310px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    }
+  .card-title-jj{
+  min-height: 25px;
+
+  }
+
+.card-title-owner-jj{
+  font-size: 12px;
+  align: right;
+  padding-top:5px;
+}
+
+  // .card-price-jj{
+  // position: absolute;
+  // bottom: 5px;
+  // }
+
+ .card-content-jj{
+  font-size: 11px;
+  }
+
+  .card-link-jj{
+    position:absolute;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+  }
+.the-map{
+
+}
+
+.card-green-title{
+  color:#2ed3b5 !important
+}
+
+.hp-listing {
+  padding: 20px 20px;
+}
+
+hr{
+border-top: 1px solid #d5d5d5;
 }
