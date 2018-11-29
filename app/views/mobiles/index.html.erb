@@ -9,7 +9,7 @@
 
 <div class="hp-listing antinavbar" id="mobiles_list">
   <div class="row">
-    <div class="col-sm-9 col-md-8 col-lg-6"><!--  début card jérémy  -->
+    <div class="col-sm-8"><!--  début card jérémy  -->
       <div class="row">
         <% if @mobiles.count == 0 %>
           <div class="cards-title text-center">
@@ -51,7 +51,7 @@
     </div><!--  fin card jérémy  -->
 
 
-    <div class="col-sm-3 col-md-4 col-lg-6 the-map" id="map"  style="height: 100vh;"
+    <div class="col-sm-4 the-map" id="map"  style="height: 100vh;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"><!-- debut map jeremy -->
       <div>
