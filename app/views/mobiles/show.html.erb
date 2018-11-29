@@ -35,12 +35,10 @@
         <div class="mobile-booking text-center">
           <% if policy(@mobile.bookings.new).create? %>
 
-
-            <div class="text-center">
-              <h2>Book <br></h2>
-                <h2><%= "#{@mobile.user.first_name}'s #{@mobile.brand} #{@mobile.model}"  %><br></h2>
-                <h3>for as low as<br></h3>
-                <h3 id="daily_price">€ <%="#{@mobile.daily_price}"%>per day</h3>
+            <div class="mobile-booking-text text-center">
+              <h2><%= "Book #{@mobile.user.first_name}'s" %><br></h2>
+                <h2><%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
+                <h3 id="daily_price"><%="for as low as €#{@mobile.daily_price} "%>per day</h3>
             </div>
 
             <div class="booking-form">
@@ -104,8 +102,6 @@
             <%= review.content %>
           </div>
         <% end %>
-
-        <p>see all reviews</p>
       </div>
 
       <div class="map-container-show">
