@@ -22,12 +22,8 @@
             </div>
 
             <div class="card-footer">
-              <p><%= link_to "#{mobile.brand}", mobile_path(mobile), class: 'card-link' %></p>
-              <p><%= link_to "#{mobile.model}", mobile_path(mobile), class: 'card-link' %></p>
+              <p><%= link_to "#{mobile.brand} - #{mobile.model}", mobile_path(mobile), class: 'card-link' %></p>
               <p class="owner"><%= "#{mobile.user.first_name}"%></p>
-              <div class="controls">
-                <a href=<%= "mailto:cecile.dezy@gmail.com?subject=Check%20this%20phone%20out!&amp;body=Hey%20Cécile,%20I%20found%20this%20phone%20on%20Rent%20a%20mobile!%20Seems%20great%20to%20me,%20but%20can%20you%20check%20it%20out%20and%20get%20back%20to%20me?%20Thanks!%20Jerem" %>><i class="fa fa-share"></i></a>
-              </div>
             </div>
           </div>
         <% end %>
@@ -37,7 +33,7 @@
     <div
       id="map"
       style="width: 100%;
-      height: 85vh;"
+      height: 100vh;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>

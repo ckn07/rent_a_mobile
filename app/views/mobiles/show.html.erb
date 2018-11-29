@@ -1,58 +1,69 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-offset-1">
+    </div>
+  </div>
+
+<!-- First Row -->
+  <div class="container antinavbar">
       <div class="mobile-infos">
         <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
       </div>
+    <div class="flexbox">
+      <div class="item-1">
+        <div class="card-mobile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
+        </div>
+      </div>
+      <div class="item-2">
+        <div class="mobile-user">
+          <h4 align="center"> Owner : <%= @mobile.user.first_name %> </h4>
+        </div>
+        <div class="mobile-booking text-center">
+          <% if policy(@mobile.bookings.new).create? %>
+            <%= link_to "Book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary', style: "padding: 30px"  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+<!-- Second Row -->
+    <div class="flexbox">
+      <div class="item-1">
+        <div class="card-mobile-reviews">
+          <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
+          <% @reviews.each do |review| %>
+            <div class= 'user_fullname'>
+              <strong>
+                <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
+              </strong>
+              <span><%= review.created_at %></span>
+            </div>
+            <div class="stars">
+              <%= "#{review.star}/5"  %>
+            </div>
+            <div class='review_content'>
+              <%= review.content %>
+            </div>
+          <% end %>
+          <p>see all reviews</p>
+        </div>
+      </div>
+
+      <div class="item-2">
+        <div class="content-mobile">
+          <h2>Description</h2>
+          <p><%= "#{@mobile.content}" %></p>
+        </div>
+      </div>
     </div>
   </div>
 
-<!-- colonne de gauche -->
-  <div class="wrapper">
-    <div class="card-mobile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
-    </div>
-
-      <div class="card-mobile-reviews">
-        <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
-        <% @reviews.each do |review| %>
-          <div class= 'user_fullname'>
-            <strong>
-              <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
-            </strong>
-            <span><%= review.created_at %></span>
-          </div>
-          <div class="stars">
-            <%= "#{review.star}/5"  %>
-          </div>
-          <div class='review_content'>
-            <%= review.content %>
-          </div>
-        <% end %>
-        <p>see all reviews</p>
-      </div>
-
-<!-- colonne de droite -->
-      <div class="mobile-user">
-        <h2> Rented by <%= @mobile.user.first_name %> </h2>
-      </div>
-
-      <div class="mobile-booking">
-        <% if policy(@mobile.bookings.new).create? %>
-          <%= link_to "book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-
-      <div class="content-mobile">
-        <p><%= "description: #{@mobile.content}" %></p>
-      </div>
-
-  </div>
+<!--   fin du container 2-->
   <div class="button-back-to-list">
     <%= link_to "Back to list", root_path %>
   </div>
 
-
-      <div class="map"></div>
+   <div class="map"></div>
 
 <% if policy(@mobile).update? %>
   <%= link_to "Edit information", edit_mobile_path %>
