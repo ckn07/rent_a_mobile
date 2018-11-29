@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show]
   end
 
+  get "dashboard", to: 'pages#dashboard', as: :dashboard
+
 end
 
 # REVIEWS

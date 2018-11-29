@@ -4,4 +4,10 @@ class PagesController < ApplicationController
   def home
     redirect_to mobiles_path
   end
+
+  def dashboard
+    @mobile = current_user.mobile
+
+  end
+
 end
