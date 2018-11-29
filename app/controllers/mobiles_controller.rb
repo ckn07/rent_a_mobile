@@ -3,9 +3,13 @@ class MobilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @mobiles = policy_scope(Mobile).order(created_at: :desc)
-    @mobiles = Mobile.where.not(latitude: nil, longitude: nil)
-
+    if params[:query].present?
+      @mobiles = policy_scope(Mobile).order(created_at: :desc)
+      @mobiles = Mobile.where("model ILIKE ?", "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
+    else
+      @mobiles = policy_scope(Mobile).order(created_at: :desc)
+      @mobiles = Mobile.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @mobiles.map do |mobile|
       {
         lng: mobile.longitude,
