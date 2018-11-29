@@ -1,15 +1,17 @@
 .flexbox {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
-.item-1{
-  width: 50%
-
+.mobile-details{
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.item-2 {
-  width: 50%;
+.booking-details {
   justify-content: center;
   align-items: center;
 }
@@ -24,4 +26,15 @@ margin-bottom: 30px;
 
 .antinavbar {
   padding-top: 70px;
+}
+
+.mobile-infos {
+}
+
+// Card de la show mobile
+.mobile-pic {
+  flex-grow: 1;
+  height: 500px;
+  background-size: cover !important;
+  background-position: center;
 }

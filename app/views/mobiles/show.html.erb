@@ -1,26 +1,68 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-offset-1">
-    </div>
+<div class="container antinavbar">
+  <div class="mobile-infos">
+    <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
   </div>
 
 <!-- First Row -->
-  <div class="container antinavbar">
-      <div class="mobile-infos">
-        <h1 align="center"><%= "#{@mobile.brand} - #{@mobile.model}" %></h1>
-      </div>
+
     <div class="flexbox">
-      <div class="item-1">
-        <div class="card-mobile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
+
+      <div class="mobile-details">
+
+        <div class="mobile-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @mobile.photo %>');">
+        </div>
+        <div class="mobile-infos">
+
+          <div class="mobile-user">
+            <h4 align="center"> Owner : <%= @mobile.user.first_name %></h4>
+          </div>
+          <div class="content-mobile">
+            <h2>Description : </h2>
+            <p><%= @mobile.content %></p>
+          </div>
         </div>
       </div>
-      <div class="item-2">
-        <div class="mobile-user">
-          <h4 align="center"> Owner : <%= @mobile.user.first_name %> </h4>
-        </div>
+
+      <div class="booking-details">
         <div class="mobile-booking text-center">
           <% if policy(@mobile.bookings.new).create? %>
-            <%= link_to "Book this mobile now", new_mobile_booking_path(@mobile), class: 'btn btn-primary', style: "padding: 30px"  %>
+
+            <div class="text-center">
+                    <h2>Book the
+                      <%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
+                      <h2>for as low as €<span id="daily_price"><%="#{@mobile.daily_price}"%></span> per day</h2>
+                  </div>
+
+                  <%= simple_form_for [@mobile, @booking] do |f| %>
+
+                    <div class="form-inputs">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <%= f.input :minDate,
+                                        as: :string,
+                                        input_html: {class: "datePicker"},
+                                        label: "From" %>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <%= f.input :maxDate,
+                                        as: :string,
+                                        input_html: {class: "datePicker"},
+                                        label: "To" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="price" class="text-center"></div>
+                    <div class="form-actions text-center">
+                      <%= f.button :submit, "Book this phone", class: "btn-form" %>
+                    </div>
+
+                  <% end %>
+
+                </div>
           <% end %>
         </div>
       </div>
@@ -28,32 +70,36 @@
 
 <!-- Second Row -->
     <div class="flexbox">
-      <div class="item-1">
-        <div class="card-mobile-reviews">
-          <h2>What people thought about that booking</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
-          <% @reviews.each do |review| %>
-            <div class= 'user_fullname'>
-              <strong>
-                <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
-              </strong>
-              <span><%= review.created_at %></span>
-            </div>
-            <div class="stars">
-              <%= "#{review.star}/5"  %>
-            </div>
-            <div class='review_content'>
-              <%= review.content %>
-            </div>
-          <% end %>
-          <p>see all reviews</p>
-        </div>
+
+      <div class="card-mobile-reviews">
+
+        <h2>What people thought about that mobile</h2>    <!-- att. 'see all reviews' VS 'what people thougth...-->
+        <% @reviews.each do |review| %>
+          <div class= 'user_fullname'>
+            <strong>
+              <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
+            </strong>
+            <span><%= review.created_at %></span>
+          </div>
+
+          <div class="stars">
+            <%= "#{review.star}/5"  %>
+          </div>
+
+          <div class='review_content'>
+            <%= review.content %>
+          </div>
+        <% end %>
+
+        <p>see all reviews</p>
       </div>
 
-      <div class="item-2">
-        <div class="content-mobile">
-          <h2>Description</h2>
-          <p><%= "#{@mobile.content}" %></p>
-        </div>
+      <div
+        id="map"
+        style="width: 60%;
+        height: 40vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>
@@ -63,7 +109,6 @@
     <%= link_to "Back to list", root_path %>
   </div>
 
-   <div class="map"></div>
 
 <% if policy(@mobile).update? %>
   <%= link_to "Edit information", edit_mobile_path %>
@@ -76,3 +121,35 @@
 
 
 <% end %>
+<script type="text/javascript">
+
+
+const minDate = document.getElementById("booking_minDate");
+const maxDate = document.getElementById("booking_maxDate");
+const price = document.getElementById("price");
+
+
+// const validateRequest = () => {
+//   if
+// };
+
+
+const calculateThePrice = (event) => {
+const priceString = document.getElementById("daily_price").innerHTML;
+const dailyPrice = parseInt(priceString, 10);
+const date1 = new Date(minDate.value);
+const date2 = new Date(maxDate.value);
+const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+const totalPrice = diffDays * dailyPrice;
+displayTotalPrice(totalPrice);
+};
+
+const displayTotalPrice = (element) => {
+  price.insertAdjacentHTML('beforeend', `<div class="alert alert-warning">The total price for this booking will be <strong>${element}</strong> Euros</div>`);
+};
+
+maxDate.addEventListener('blur', calculateThePrice);
+
+
+</script>
