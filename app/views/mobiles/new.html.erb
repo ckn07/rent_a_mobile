@@ -1,74 +1,75 @@
-<div class="container flex-container antinavbar">
+<div class="container flex-container antinavbar" id="flex-container-signup">
 
   <div class="flex-items">
-    <div class="row">
+    <div class="registration-box">
+      <div class="row">
 
-      <div class="text-center">
-        <h1>Add a mobile</h1>
+        <div class="text-center">
+          <h1>Add a mobile</h1>
+        </div>
+
+        <%= simple_form_for @mobile do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <div class="form-inputs">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <%= f.input :brand,
+                              html: { autocomplete: 'off' },
+                              class:"form-controls" %>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <%= f.input :model,
+                              html: { autocomplete: 'off' },
+                              class:"form-controls" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.input :content,
+                          html: { autocomplete: 'off' },
+                          class:"form-controls" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.input :daily_price,
+                          html: { autocomplete: 'off' },
+                          class:"form-controls" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.input :address,
+                          html: { autocomplete: 'off' },
+                          class:"form-controls" %>
+            </div>
+
+
+            <div class="form-group">
+              <%= f.input :photo,
+                          class:"form-controls btn-form" %>
+            </div>
+
+            <%= f.input :photo_cache, as: :hidden %>
+
+          </div>
+
+          <div class="form-actions text-center">
+            <%= f.button :submit, class: 'btn-form' %>
+          </div>
+
+        <% end %>
       </div>
 
-      <%= simple_form_for @mobile do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-        <div class="form-inputs">
-
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <%= f.input :brand,
-                            html: { autocomplete: 'off' },
-                            class:"form-controls" %>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <%= f.input :model,
-                            html: { autocomplete: 'off' },
-                            class:"form-controls" %>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <%= f.input :content,
-                        html: { autocomplete: 'off' },
-                        class:"form-controls" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.input :daily_price,
-                        html: { autocomplete: 'off' },
-                        class:"form-controls" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.input :address,
-                        html: { autocomplete: 'off' },
-                        class:"form-controls" %>
-          </div>
-
-
-          <div class="form-group">
-            <%= f.input :photo,
-                        class:"form-controls btn-form" %>
-          </div>
-
-          <%= f.input :photo_cache, as: :hidden %>
-
-        </div>
-
-        <div class="form-actions text-center">
-          <%= f.button :submit, class: 'btn-form' %>
-        </div>
-
-      <% end %>
+      <div class="text-center">
+        <%= link_to "Revenir à la liste", root_path %>
+      </div>
     </div>
-
-    <div class="text-center">
-      <%= link_to "Revenir à la liste", root_path, class: "btn btn-primary" %>
-    </div>
-
   </div>
 </div>
