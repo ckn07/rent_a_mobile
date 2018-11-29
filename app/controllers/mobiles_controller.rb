@@ -10,7 +10,7 @@ class MobilesController < ApplicationController
       {
         lng: mobile.longitude,
         lat: mobile.latitude,
-        # infoWindow: render_to_string(partial: "infowindow", locals: { mobile: mobile })
+        infoWindow: render_to_string(partial: "infowindow", locals: { mobile: mobile })
       }
     end
   end
