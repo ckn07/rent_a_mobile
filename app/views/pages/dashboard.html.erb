@@ -3,7 +3,11 @@
 <!-- colonne de gauche 25% -->
   <div class="container-user-info">
     <div class="profile-pic"></div>
-    <div class="verified-info"></div>
+    <div class="verified-info">
+      <div class="card-header">Verified info</div>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.phone_number %></p>
+    </div>
   </div>
 
 <!-- colonne de droite 75% -->

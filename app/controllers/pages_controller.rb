@@ -7,7 +7,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @mobile = current_user.mobile
-
   end
 
 end
