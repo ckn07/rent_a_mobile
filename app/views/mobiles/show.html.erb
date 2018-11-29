@@ -28,9 +28,9 @@
           <% if policy(@mobile.bookings.new).create? %>
 
             <div class="text-center">
-                    <h2>Book the
-                      <%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
-                      <h2>for as low as €<span id="daily_price"><%="#{@mobile.daily_price}"%></span> per day</h2>
+                    <h2>Book the<br></h2>
+                      <h2><%= "#{@mobile.brand} #{@mobile.model}"  %><br></h2>
+                      <h3>for as low as €<span id="daily_price"><%="#{@mobile.daily_price}"%></span> per day</h3>
                   </div>
 
                   <%= simple_form_for [@mobile, @booking] do |f| %>

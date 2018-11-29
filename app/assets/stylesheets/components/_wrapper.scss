@@ -17,11 +17,23 @@
 }
 
 .mobile-user {
-margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.mobile-booking {
+  background-color: #2ed3b5;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .mobile-booking .btn {
   display: inline-block;
+  background-color: #F4F4F4;
+  color: #2ed3b5;
+}
+
+.mobile-booking h3 {
+  font-weight: normal;
 }
 
 .antinavbar {
