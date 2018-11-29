@@ -6,6 +6,9 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "All mobiles", mobiles_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "By brand", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Add new mobile", new_mobile_path, class: "navbar-wagon-item navbar-wagon-button" %>
     <!-- Search box begin -->
     <%= form_tag "#{mobiles_path}#mobiles_list", method: :get do %>
       <%= text_field_tag :query,
@@ -51,7 +54,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id:"login-btn"%>
     <% end %>
 
   <!-- Profile picture with dropdown list -->
