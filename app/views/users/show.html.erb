@@ -1,0 +1,60 @@
+<div class='container flexbox' style='padding-top: 90px'>
+
+<!-- colonne de gauche 25% -->
+  <div class="container-user-info">
+    <div class="profile-pic">
+      <img src="https://kitt.lewagon.com/placeholder/users/cecile-veneziani" style = "height: 200px; width:200px;" >
+    </div>
+    <div class="verified-info">
+      <div class="card-header">Verified info</div>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.phone_number %></p>
+    </div>
+  </div>
+
+<!-- colonne de droite 75% -->
+  <div class="container-bookings">
+
+    <div class=dashboard-header>Your phones
+    </div>
+      <div class="dashboard-section">
+
+        <% @user.mobiles.each do |mobile| %>
+          <img class="dashboard-phone-img" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+          <div class="dashboard-section-brand">
+            <%= mobile.brand %> <%= mobile.model %>
+          </div>
+          <div class="dashboard-section-price">
+             <p><strong><%= mobile.daily_price %></strong></p>
+          </div>
+              <%= link_to "edit", ""  %>
+              <%= link_to "delete", ""  %>
+
+          <% end %>
+      </div>
+
+
+    <div class=dashboard-header>Your lending history</div>
+        <div class="dashboard-section">
+          <% @user.mobiles.each do |mobile| %>
+            <% mobile.bookings.each do |booking| %>
+              <%= booking.user_id.photo %>
+              <img class="dashboard-phone-img" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+              <div class="dashboard-section-brand">
+                <%= mobile.brand %> <%= mobile.model %>
+              </div>
+              <div class="dashboard-section-brand">
+                 <p><%= booking.minDate %> <%= booking.maxDate %></p>
+              </div>
+              <div style ="flex-grow: 1" >
+                <%= booking.content %>
+              </div>
+              <div class="dashboard-section-price">
+                <p><%= (booking.maxDate - booking.minDate) * mobile.daily_price %></p>
+              </div
+                  <%= link_to "edit", ""  %>
+                  <%= link_to "delete", ""  %>
+            <% end %>
+          <% end %>
+        </div>
+</div>
