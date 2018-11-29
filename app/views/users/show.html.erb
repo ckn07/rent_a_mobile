@@ -28,10 +28,13 @@
               <%= link_to "edit", ""  %>
               <%= link_to "delete", ""  %>
           <% end %>
-
+<!--
     <div class=dashboard-header>Your lending history</div>
       <div class="dashboard-section">
-        <% @user.bookings.user.each do |booking| %>
+        <% @user.mobiles.each do |mobile| %>
+          <%= mobile.bookings.each do |booking| %>
+
+        <p>from <%= booking.minDate %> to <%= booking.maxDate %><p>
           <img class="dashboard-phone-img" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
           <div class="dashboard-section-brand">
             <%= mobile.brand %> <%= mobile.model %>
@@ -41,7 +44,7 @@
           </div>
               <%= link_to "edit", ""  %>
               <%= link_to "delete", ""  %>
-          <% end %>
+          <% end %> -->
    </div>
 
 
