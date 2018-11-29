@@ -5,7 +5,7 @@ class MobilesController < ApplicationController
   def index
     if params[:query].present?
       @mobiles = policy_scope(Mobile).order(created_at: :desc)
-      @mobiles = Mobile.where("model ILIKE ?", "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
+      @mobiles = Mobile.where.not(latitude: nil, longitude: nil).search_mobiles("%#{params[:query]}%")
     else
       @mobiles = policy_scope(Mobile).order(created_at: :desc)
       @mobiles = Mobile.where.not(latitude: nil, longitude: nil)
