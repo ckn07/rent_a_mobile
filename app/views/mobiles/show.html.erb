@@ -12,8 +12,7 @@
 
       <div class="mobile-details">
 
-        <div class="mobile-pic" style="background-image: url('<%= cl_image_path @mobile.photo %>'); width: 100%">
-        </div>
+        <img class="img-card-jj" src="<%= cl_image_path @mobile.photo, crop: :fill %>" />
 
         <div class="mobile-infos">
           <div style="display: flex; flex-direction: column;">
