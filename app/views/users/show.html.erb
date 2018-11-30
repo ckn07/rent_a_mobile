@@ -27,7 +27,7 @@
 
           <div class="dashboard-section">
 
-            <% @user.mobiles.each do |mobile| %>
+            <% @mobiles.each do |mobile| %>
               <div class="dashboard-section-line">
                 <div class="dashboard-section-pic" style="background-image: url('<%= cl_image_path mobile.photo %>')">
                 </div>
@@ -48,13 +48,12 @@
             <% end %>
           </div>
         </div>
-
+<% raise %>
         <div class="profile-rows">
           <div class=dashboard-header>
             <h2>Your lending history</h2>
           </div>
 
-         <!--  -->
         </div>
       </div>
     </div>
