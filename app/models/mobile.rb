@@ -8,6 +8,10 @@ class Mobile < ApplicationRecord
   validates :daily_price, presence: true
   validates :photo, presence: true
   validates :address, presence: true
+  validates :grade, presence: true
+  validates :earphones, presence: true, default: false
+  validates :charger, presence: true, default: false
+
   mount_uploader :photo, PhotoUploader
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
