@@ -8,7 +8,7 @@
     <div class="flexbox">
       <div class="container-user-info">
         <div class="profile-pic">
-          <img src='<%= cl_image_path "#{current_user.photo}"%>' style = "height: 150px; width:150px;" >
+          <img src='<%= cl_image_path "#{current_user.photo}"%>' style = "height: 135px; width:135px;" >
         </div>
         <div class="verified-info">
           <div class="card-header">Verified info</div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="buttons">
                   <%= link_to "Edit", mobile_path, class: "btn btn-form" %>
-                  <%= link_to "Delete", mobile_path,
+                  <%= link_to "Delete", mobile_path(mobile),
                     method: :delete,
                     data: { confirm: "Are you sure?" },
                     class: "btn btn-form btn-delete" %>
