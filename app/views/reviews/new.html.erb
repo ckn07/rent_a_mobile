@@ -2,36 +2,17 @@
 <div class="container antinavbar">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1>book the
-      <%= "#{@mobile.brand} #{@mobile.model}"  %><br>
+      <h1>What did you think of the
+      <%= "#{@mobile.brand} #{@mobile.model}" %>
       </h1>
-      <h2>for as low as <%="#{@mobile.daily_price}"%> € per day</h2>
-
-      <%= simple_form_for [@mobile, @booking] do |f| %>
-        <%= f.input :minDate %>
-        <%= f.input  :maxDate %>
-        <%= f.submit class: "btn btn-primary"%>
+       <h3>Add a review</h3>
+      <%= simple_form_for [@mobile, @booking, @review] do |f| %>
+        <%= f.input :star, collection: 0..5 %>
+        <%= f.input :content %>
+        <%= f.submit class: "btn btn-form"%>
       <% end %>
-
-    </div>
-  </div>
-  <div class="col-sm-6 col-sm-offset-3">
-  <div class="card-mobile-reviews">
-    <h2>What people thought about that booking</h2>
-      <% @reviews.each do |review| %>
-        <div class= 'user_fullname'>
-          <strong>
-            <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
-          </strong>
-        </div>
-        <div class="stars">
-          <%= "#{review.star}/5"  %>
-        </div>
-        <div class='review_content'>
-          <%= review.content %>
-        </div>
-      <% end %>
-    </div>
+     </div>
+   </div>
   </div>
 </div>
 

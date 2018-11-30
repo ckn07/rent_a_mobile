@@ -20,10 +20,11 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to mobile_path(@booking.mobile_id)
+      redirect_to user_path(current_user)
     else
       render "new"
     end
+
   end
 
 private
