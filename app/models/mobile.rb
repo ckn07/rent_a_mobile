@@ -9,8 +9,8 @@ class Mobile < ApplicationRecord
   validates :photo, presence: true
   validates :address, presence: true
   validates :grade, presence: true
-  validates :earphones, presence: true, default: false
-  validates :charger, presence: true, default: false
+  validates :earphones, default: false
+  validates :charger, default: false
 
   mount_uploader :photo, PhotoUploader
   geocoded_by :address

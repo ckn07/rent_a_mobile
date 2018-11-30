@@ -82,7 +82,10 @@ mobOne = Mobile.new(brand: "Samsung",
   model: "Note 8",
   daily_price: "5",
   address: "26 rue Edouard Vaillant, 93140 Bondy, France",
-  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  grade: "New",
+  earphones: false,
+  charger: true)
 mobOne.user_id = jeremy.id
 mobOne.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/galaxy_note.jpg"
 
@@ -93,7 +96,10 @@ mobTwo = Mobile.new(brand: "Apple",
   model: "Iphone 7 +",
   daily_price: "2",
   address: "3 rue de la Jonquiere, 75017 Paris, France",
-  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  grade: "New",
+  earphones: false,
+  charger: true)
 mobTwo.user_id = benoit.id
 mobTwo.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/Iphone_7_Plus.jpg"
 
@@ -104,8 +110,10 @@ mobThree = Mobile.new(brand: "Samsung",
   model: "galaxy s7",
   daily_price: "1",
   address: "6 rue Euryale Dehaynin, 75019 Paris, France ",
-  content: "super mobile vraiment même si Samsung ça pue. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
-
+  content: "super mobile vraiment même si Samsung ça pue. Eum quidem dolores dicta dolorem ex qui",
+  grade: "New",
+  earphones: false,
+  charger: false)
 mobThree.user_id = cecile.id
 mobThree.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/galaxy-7.jpg"
 
@@ -115,7 +123,10 @@ mobFour = Mobile.new(brand: "One+",
   model: "3T",
   daily_price: "3",
   address: "20 Boulevard de Clichy, 75018 Paris, France",
-  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui. Nihil, animi, dicta.",
+  grade: "New",
+  earphones: true,
+  charger: true)
 
 mobFour.user_id = chris.id
 mobFour.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/One.jpg"
@@ -126,7 +137,10 @@ mobFive = Mobile.new(brand: "Huawei",
   model: "P20",
   daily_price: "15",
   address: "4 rue Abel, 75012 Pars, France",
-  content: "Mobile de chinois qui vous espionne trop cool,ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "Mobile de chinois qui vous espionne trop cool,ex qui,consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.",
+  grade: "New",
+  earphones: false,
+  charger: true)
 
 mobFive.user_id = jerem.id
 mobFive.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/huawei_P20.jpg"
@@ -137,7 +151,10 @@ mobSix = Mobile.new(brand: "Motorola",
   model: "X475HEN",
   daily_price: "10",
   address: "2 rue des moines, 75017 Paris, France",
-  content: "Mobile cool et en bon état trop cool, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "Mobile cool et en bon état trop cool, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.",
+  grade: "New",
+  earphones: true,
+  charger: true)
 
 mobSix.user_id = ben.id
 mobSix.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/motorola.jpg"
@@ -148,7 +165,10 @@ mobSeven = Mobile.new(brand: "LG",
   model: "P430",
   daily_price: "22",
   address: "38 rue Euryale Dehaynin, 75019 Paris, France",
-  content: "LG c'est cool c'est la base et il est sans rayures.consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
+  content: "LG c'est cool c'est la base et il est sans rayures.consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.",
+  grade: "New",
+  earphones: true,
+  charger: true)
 
 mobSeven.user_id = cess.id
 mobSeven.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574525/LG.jpg"
@@ -159,7 +179,10 @@ mobEight = Mobile.new(brand: "Wyko",
   model: "France",
   daily_price: "6",
   address: "15 boulevard Saint-Germain, 75005 Paris, France",
-  content: "Des fois il marche, des fois il marche pas. C'est normal c'est un modèle Français")
+  content: "Des fois il marche, des fois il marche pas. C'est normal c'est un modèle Français",
+  grade: "New",
+  earphones: true,
+  charger: false)
 
 mobEight.user_id = cricris.id
 mobEight.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/wyko.jpg"
