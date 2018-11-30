@@ -26,6 +26,11 @@ class MobilesController < ApplicationController
     @user = current_user
     @booking = @mobile.bookings.new
     authorize @booking
+    @marker = {
+        lng: @mobile.longitude,
+        lat: @mobile.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { mobile: @mobile })
+    }
   end
 
   def new
