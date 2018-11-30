@@ -67,6 +67,15 @@ cricris = User.create!(email: "christophenoujaim@gmail.com",
 
 puts "8 users created"
 
+array_photo = ["https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/One.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/Iphone_7_Plus.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/motorola.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/galaxy-7.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543491683/huawei_-_P20.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/galaxy_note.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/huawei_P20.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574525/LG.jpg",
+  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/wyko.jpg"]
 
 puts "creating 1 mobile for each user"
 mobOne = Mobile.new(brand: "Samsung",
@@ -75,18 +84,10 @@ mobOne = Mobile.new(brand: "Samsung",
   address: "26 rue Edouard Vaillant, 93140 Bondy, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobOne.user_id = jeremy.id
-array_photo = ["https://res.cloudinary.com/dp22wwxuy/image/upload/v1543409621/meachh2bclcj1fetka7t.jpg",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543326588/qojtv1zwe3giwsi9erou.jpg",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410214/mai7zrsapni9jrubbsqn.png",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543410345/fa3hg7q6j7ng5phzryyv.jpg",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543491683/huawei_-_P20.jpg",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543420579/wkuywj1oclbpfygxlidr.jpg",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543492170/motorola-one-1000.png",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543492236/lg_cellphones_G7-31866.png",
-  "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543492304/wiko_lenny_2_noir.jpg"]
-mobOne.remote_photo_url = array_photo.sample
+mobOne.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/galaxy_note.jpg"
 
 mobOne.save!
+
 
 mobTwo = Mobile.new(brand: "Apple",
   model: "Iphone 7 +",
@@ -94,7 +95,7 @@ mobTwo = Mobile.new(brand: "Apple",
   address: "3 rue de la Jonquiere, 75017 Paris, France",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 mobTwo.user_id = benoit.id
-mobTwo.remote_photo_url = array_photo.sample
+mobTwo.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/Iphone_7_Plus.jpg"
 
 mobTwo.save!
 
@@ -106,7 +107,7 @@ mobThree = Mobile.new(brand: "Samsung",
   content: "super mobile vraiment même si Samsung ça pue. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobThree.user_id = cecile.id
-mobThree.remote_photo_url = array_photo.sample
+mobThree.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/galaxy-7.jpg"
 
 mobThree.save!
 
@@ -117,7 +118,7 @@ mobFour = Mobile.new(brand: "One+",
   content: "super mobile vraiment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quidem dolores dicta dolorem ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobFour.user_id = chris.id
-mobFour.remote_photo_url = array_photo.sample
+mobFour.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/One.jpg"
 
 mobFour.save!
 
@@ -128,7 +129,7 @@ mobFive = Mobile.new(brand: "Huawei",
   content: "Mobile de chinois qui vous espionne trop cool,ex qui, deserunt iste tempore pariatur aliquam reiciendis, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobFive.user_id = jerem.id
-mobFive.remote_photo_url = array_photo.sample
+mobFive.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/huawei_P20.jpg"
 
 mobFive.save!
 
@@ -139,7 +140,7 @@ mobSix = Mobile.new(brand: "Motorola",
   content: "Mobile cool et en bon état trop cool, consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobSix.user_id = ben.id
-mobSix.remote_photo_url = array_photo.sample
+mobSix.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574031/motorola.jpg"
 
 mobSix.save!
 
@@ -150,7 +151,7 @@ mobSeven = Mobile.new(brand: "LG",
   content: "LG c'est cool c'est la base et il est sans rayures.consequuntur suscipit dignissimos animi numquam quasi. Nihil, animi, dicta.")
 
 mobSeven.user_id = cess.id
-mobSeven.remote_photo_url = array_photo.sample
+mobSeven.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574525/LG.jpg"
 
 mobSeven.save!
 
@@ -161,7 +162,7 @@ mobEight = Mobile.new(brand: "Wyko",
   content: "Des fois il marche, des fois il marche pas. C'est normal c'est un modèle Français")
 
 mobEight.user_id = cricris.id
-mobEight.remote_photo_url = array_photo.sample
+mobEight.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543574030/wyko.jpg"
 
 mobEight.save!
 
