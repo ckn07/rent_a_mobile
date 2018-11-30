@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_102729) do
     t.string "last_name"
     t.string "phone_number"
     t.string "address"
+    t.string "photo", default: "http://res.cloudinary.com/dp22wwxuy/image/upload/v1543573061/catjpsrnbyzyoajn0pqe.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
