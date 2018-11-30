@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     total = @mobile.daily_price * duration
     @booking.total_price = total
     if @booking.save
-      redirect_to mobile_path(@booking.mobile_id)
+      redirect_to user_path(current_user)
       notice
     else
       alert "ça ne marche pas"
