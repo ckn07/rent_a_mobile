@@ -112,7 +112,7 @@
             <strong>
               <%= review.booking.user.first_name + ' ' + review.booking.user.last_name %>
             </strong>
-            <span><%= review.created_at %></span>
+            <span><%= review.created_at.strftime("%d %B %Y") %></span>
           </div>
 
           <div class="stars">
