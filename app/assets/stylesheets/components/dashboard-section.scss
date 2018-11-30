@@ -5,6 +5,9 @@
   padding: 10px;
   margin: 30px;
 }
+.verified-info {
+  font-size: 15px;
+}
 
 .dashboard-name {
   padding: 10px;
@@ -77,6 +80,30 @@
 .profile-pic img {
   border-radius: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.history-lend {
+
+}
+
+.dashboard-av {
+  width: 50px;
+}
+
+.dashboard-av-m {
+  width: 50px;
+}
+
+.dashboard-hist-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.dashboard-hist-dates {
+  display: flex;
+  flex-direction: column;
 }
 
 // ----

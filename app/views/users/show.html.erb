@@ -8,7 +8,7 @@
     <div class="flexbox">
       <div class="container-user-info">
         <div class="profile-pic">
-          <img src='<%= cl_image_path "#{current_user.photo}"%>' style = "height: 150px; width:150px;" >
+          <img src='<%= cl_image_path "#{current_user.photo}"%>' style = "height: 135px; width:135px;" >
         </div>
         <div class="verified-info">
           <div class="card-header">Verified info</div>
@@ -36,11 +36,11 @@
                      <%= mobile.brand %> <%= mobile.model %>
                 </div>
                 <div class="dashboard-section-price">
-                  <p><strong><%= mobile.daily_price %></strong></p>
+                  <p><strong>€<%= mobile.daily_price %> / day</strong></p>
                 </div>
                 <div class="buttons">
                   <%= link_to "Edit", mobile_path, class: "btn btn-form" %>
-                  <%= link_to "Delete", mobile_path,
+                  <%= link_to "Delete", mobile_path(mobile),
                     method: :delete,
                     data: { confirm: "Are you sure?" },
                     class: "btn btn-form btn-delete" %>
@@ -52,8 +52,9 @@
 
         <div class="profile-rows history">
           <div class=dashboard-header>
-            <h2>Phones you have lended</h2>
+            <h2>Phones you have rented</h2>
           </div>
+
           <div class="dashboard-section history-lend">
             <% if @bookings_as_renter.nil? %>
               <p>no booking at the moment</p>
@@ -61,11 +62,13 @@
             <% @bookings_as_renter.each do |booking| %>
               <div class="dashboard-hist-row">
                 <div class="history-lend-items-av"><%= cl_image_tag booking.mobile.photo, class: "dashboard-av-m" %></div>
+                <div class="dashboard-section-brand">
+                     <%= booking.mobile.brand %> <%= booking.mobile.model %>
+                </div>
                 <div class="history-lend-items-dashboard-hist-dates">
                   <div class="history-lend-items-date">From <%= booking.minDate %></div>
                   <div class="history-lend-items-date">To <%= booking.maxDate %></div>
                 </div>
-                <div class="history-lend-items-av"><%= cl_image_tag booking.user.photo, class: "dashboard-av" %></div>
                 <div class="history-lend-items-statut pending"><%= booking.status%></div>
               </div>
             <% end %>
@@ -75,27 +78,31 @@
 
         <div class="profile-rows history">
           <div class=dashboard-header>
-            <h2>Phones you have rented</h2>
+            <h2>Phones you have lended</h2>
           </div>
           <div class="dashboard-section">
             <div class="dashboard-no-booking-text">
               <% if @bookings_as_lender.nil? %>
                 <p>no booking at the moment</p>
-            </div>
-            <div class="dashboard-booking-infos">
-            <% else %>
-              <% @bookings_as_lender.each do |booking| %>
-                <%= booking.user_id %>
-                <%= booking.minDate %>
-                <%= booking.maxDate %>
-                <%= booking.mobile_id %>
-                <%= booking.status %>
+              <% else %>
+                <% @bookings_as_lender.each do |booking| %>
+                  <div class="dashboard-hist-row">
+                    <div class="history-lend-items-av"><%= cl_image_tag booking.mobile.photo, class: "dashboard-av-m" %></div>
+                    <div class="dashboard-section-brand">
+                    <%= booking.mobile.brand %> <%= booking.mobile.model %>
+                    </div>
+                    <div class="history-lend-items-av"><%= cl_image_tag booking.user.photo, class: "dashboard-av-m" %></div>
+                    <div class="history-lend-items-dashboard-hist-dates">
+                      <div class="history-lend-items-date">From <%= booking.minDate %></div>
+                      <div class="history-lend-items-date">To <%= booking.maxDate %></div>
+                    </div>
+                    <div class="history-lend-items-statut pending"><%= booking.status%></div>
+                  </div>
+                <% end %>
               <% end %>
             </div>
-            <% end %>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
