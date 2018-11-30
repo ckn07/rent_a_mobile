@@ -1,61 +1,93 @@
 <div class='container antinavbar'>
-  <div class="container-dashboard">
-    <div class="dashboard-name">
-      <h1 align="center">Dashboard</h1>
-    </div>
+ <div class="container-dashboard">
+   <div class="dashboard-name">
+     <h1 align="center">Dashboard</h1>
+   </div>
 
-    <!-- colonne de gauche 25% -->
-    <div class="flexbox">
-      <div class="container-user-info">
-        <div class="profile-pic">
-          <img src='<%= cl_image_path "#{current_user.photo}"%>' style = "height: 150px; width:150px;" >
-        </div>
-        <div class="verified-info">
-          <div class="card-header">Verified info</div>
-          <p><%= current_user.email %></p>
-          <p><%= current_user.phone_number %></p>
-        </div>
-      </div>
+   <!-- colonne de gauche 25% -->
+   <div class="flexbox">
+     <div class="container-user-info">
+       <div class="profile-pic">
+         <img src='<%= cl_image_path "#{current_user.photo}"%>' style = "height: 150px; width:150px;" >
+       </div>
+       <div class="verified-info">
+         <div class="card-header">Verified info</div>
+         <p><%= current_user.email %></p>
+         <p><%= current_user.phone_number %></p>
+       </div>
+     </div>
 
-    <!-- colonne de droite 75% -->
-      <div class="container-bookings">
+   <!-- colonne de droite 75% -->
+     <div class="container-bookings">
 
-        <div class="profile-rows">
-          <div class=dashboard-header>
-            <h2>Your phones</h2>
-          </div>
+       <div class="profile-rows">
+         <div class=dashboard-header>
+           <h2>Your phones</h2>
+         </div>
 
-          <div class="dashboard-section">
+         <div class="dashboard-section">
 
-            <% @mobiles.each do |mobile| %>
-              <div class="dashboard-section-line">
-                <div class="dashboard-section-pic" style="background-image: url('<%= cl_image_path mobile.photo %>')">
-                </div>
-                <div class="dashboard-section-brand">
-                  <%= mobile.brand %> <%= mobile.model %>
-                </div>
-                <div class="dashboard-section-price">
-                   <p><strong><%= mobile.daily_price %></strong></p>
-                </div>
-                <div class="buttons">
-                  <%= link_to "Edit", mobile_path, class: "btn btn-form" %>
-                  <%= link_to "Delete", mobile_path,
-                    method: :delete,
-                    data: { confirm: "Are you sure?" },
-                    class: "btn btn-form btn-delete" %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-<% raise %>
-        <div class="profile-rows">
-          <div class=dashboard-header>
-            <h2>Your lending history</h2>
-          </div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+           <% @mobiles.each do |mobile| %>
+
+             <div class="dashboard-section-line">
+               <div class="dashboard-section-pic" style="background-image: url('<%= cl_image_path mobile.photo %>')">
+               </div>
+               <div class="dashboard-section-brand">
+                 <%= mobile.brand %> <%= mobile.model %>
+               </div>
+               <div class="dashboard-section-price">
+                  <p><strong><%= mobile.daily_price %></strong></p>
+               </div>
+               <div class="buttons">
+                 <%= link_to "Edit", mobile_path, class: "btn btn-form" %>
+                 <%= link_to "Delete", mobile_path,
+                   method: :delete,
+                   data: { confirm: "Are you sure?" },
+                   class: "btn btn-form btn-delete" %>
+               </div>
+             </div>
+           <% end %>
+         </div>
+       </div>
+
+       <div class="profile-rows">
+         <div class=dashboard-header>
+           <h2>Your renting history</h2>
+         </div>
+           <div class="dashboard-section">
+             <% if @bookings_as_renter.nil? %>
+                 <p>no booking at the moment</p>
+             <% else %>
+             <% @bookings_as_renter.each do |booking| %>
+               <%= booking.user_id %>
+               <%= booking.minDate %>
+               <%= booking.maxDate %>
+               <%= booking.mobile_id %>
+               <%= booking.status %>
+             <% end %>
+           <% end %>
+         </div>
+       </div>
+         <div class="profile-rows">
+         <div class=dashboard-header>
+           <h2>Your rental history</h2>
+         </div>
+           <div class="dashboard-section">
+             <% if @bookings_as_lender.nil? %>
+                 <p>no booking at the moment</p>
+             <% else %>
+             <% @bookings_as_lender.each do |booking| %>
+               <%= booking.user_id %>
+               <%= booking.minDate %>
+               <%= booking.maxDate %>
+               <%= booking.mobile_id %>
+               <%= booking.status %>
+             <% end %>
+           <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
