@@ -7,7 +7,6 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "All mobiles", mobiles_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "By brand", "#", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Add new mobile", new_mobile_path, class: "navbar-wagon-item navbar-wagon-button" %>
     <!-- Search box begin -->
     <%= form_tag "#{mobiles_path}#mobiles_list", method: :get do %>
@@ -29,7 +28,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
               <% end %>
             </li>
             <li>
