@@ -15,55 +15,82 @@ Mobile.destroy_all
 puts 'Cleaning database of users...'
 User.destroy_all
 
-puts 'generating the best users with password 123456 '
-jeremy = User.create!(email: "jeremy.jouffroy@gmail.com",
+puts 'generating users with password 123456 '
+jeremy = User.new(email: "jeremy.jouffroy@gmail.com",
  password: "123456",
  first_name: "Jeremy",
  last_name: "Jouffroy",
  phone_number: "0683411488",
  address: "26 rue Edouard Vaillant, 93140 Bondy, France")
-benoit = User.create!(email: "benoitdelest@gmail.com",
+jeremy.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586952/1536352.jpg"
+jeremy.save!
+
+
+benoit = User.new(email: "benoitdelest@gmail.com",
  password: "123456",
  first_name: "Benoit",
  last_name: "Delest",
  phone_number: "0609216014",
  address: "3 rue de la Joncquiere, 75017 Paris, France")
-cecile = User.create!(email: "cecile.dezy@gmail.com",
+benoit.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586889/benoit.png"
+benoit.save!
+
+cecile = User.new(email: "cecile.dezy@gmail.com",
  password: "123456",
  first_name: "Cécile",
  last_name: "Dezy",
  phone_number: "0677136554",
   address: "6 rue Euryale Dehaynin, 75019 Paris, France ")
-chris = User.create!(email: "christophe@noujaim.com",
+cecile.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586962/janttrofl6xagki5zk6g.jpg"
+cecile.save!
+
+
+chris = User.new(email: "christophe@noujaim.com",
  password: "123456",
  first_name: "Christophe",
  last_name: "Noujaim",
  phone_number: "0663420512",
    address: "20 Boulevard de Clichy, 75018 Paris, France")
-jerem = User.create!(email: "jeremy.jouffroy+1@gmail.com",
+chris.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586971/42675888.png"
+chris.save!
+
+
+jerem = User.new(email: "jeremy.jouffroy+1@gmail.com",
  password: "123456",
  first_name: "Jer",
  last_name: "Jouf",
  phone_number: "0683411489",
  address: "4 rue abel, 75012 Paris, France")
-ben = User.create!(email: "benoitdelest+1@gmail.com",
+jerem.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586952/1536352.jpg"
+jerem.save!
+
+
+ben = User.new(email: "benoitdelest+1@gmail.com",
  password: "123456",
  first_name: "Ben",
  last_name: "Deleste",
  phone_number: "0609216015",
  address: "3 rue des moines, 75017 Paris, France")
-cess = User.create!(email: "cecile.dezy+1@gmail.com",
+ben.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586889/benoit.png"
+ben.save!
+
+cess = User.new(email: "cecile.dezy+1@gmail.com",
  password: "123456",
  first_name: "Céss",
  last_name: "Dess",
  phone_number: "0677136555",
   address: "38 rue Euryale Dehaynin, 75019 Paris, France")
-cricris = User.create!(email: "christophenoujaim@gmail.com",
+cess.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586962/janttrofl6xagki5zk6g.jpg"
+cess.save!
+
+cricris = User.new(email: "christophenoujaim@gmail.com",
  password: "123456",
  first_name: "Chris",
  last_name: "NouNou",
  phone_number: "0663420513",
   address: "15 boulevard Saint-Germain, 75005 Paris, France")
+cricris.remote_photo_url = "https://res.cloudinary.com/dp22wwxuy/image/upload/v1543586971/42675888.png"
+cricris.save!
 
 puts "8 users created"
 
