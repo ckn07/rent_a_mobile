@@ -1,3 +1,7 @@
+.container-bookings {
+  width: 50%;
+}
+
 .flexbox {
   display: flex;
   flex-direction: row;
@@ -120,4 +124,27 @@
   color: white;
   font-size: 30px;
   padding: 30px;
+}
+.history-lend {
+
+}
+
+.dashboard-av {
+  width: 50px;
+}
+
+.dashboard-av-m {
+  width: 100px;
+}
+
+.dashboard-hist-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.dashboard-hist-dates {
+  display: flex;
+  flex-direction: column;
 }
