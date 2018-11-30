@@ -31,7 +31,7 @@
            <% @mobiles.each do |mobile| %>
 
              <div class="dashboard-section-line">
-               <div class="dashboard-section-pic" style="background-image: url('<%= cl_image_path mobile.photo %>')">
+               <img class="dashboard-section-pic" src="<%= cl_image_path mobile.photo %>">
                </div>
                <div class="dashboard-section-brand">
                  <%= mobile.brand %> <%= mobile.model %>
@@ -53,7 +53,7 @@
 
        <div class="profile-rows">
          <div class=dashboard-header>
-           <h2>Your renting history</h2>
+           <h2>what you rented to others</h2>
          </div>
            <div class="dashboard-section">
              <% if @bookings_as_renter.nil? %>
@@ -71,7 +71,7 @@
        </div>
          <div class="profile-rows">
          <div class=dashboard-header>
-           <h2>Your rental history</h2>
+           <h2>People rented from you</h2>
          </div>
            <div class="dashboard-section">
              <% if @bookings_as_lender.nil? %>
