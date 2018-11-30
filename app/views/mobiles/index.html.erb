@@ -7,57 +7,49 @@
   </div>
 </div>
 
-<div class="hp-listing antinavbar" id="mobiles_list">
-  <div class="row">
-    <div class="col-sm-8"><!--  début card jérémy  -->
-      <div class="row">
-        <% if @mobiles.count == 0 %>
-          <div class="cards-title text-center">
-            <h2>
-              <strong>
-                "<%="#{params[:query]}"%>"
-              </strong>
-               you said ? I have no idea what you're talking about. Try again
-            </h2>
-          </div>
-        <% else %>
-          <div class="cards-title text-center" >
-            <h2 class="card-green-title">Choose a mobile</h2>
-          </div>
-        <% end %>
-        <% @mobiles.each do |mobile| %>
-          <div class="col-sm-6 card-jj">
-            <div class="thumbnail white-thumb">
-              <img class="img-card-jj" src="<%= cl_image_path mobile.photo %>" />
-              <hr>
-              <div class="card-title-jj">
-                <h4 class="card-green-title"><%="#{mobile.brand} #{mobile.model}"%></h4>
-              </div>
-
-              <div class="card-price-jj">
-                 Rent it for <span class="card-green-title">€<%= "#{mobile.daily_price}"%></span>/day
-              </div>
-              <!-- <div class="card-content-jj">
-                <%= "#{mobile.content}"%>
-              </div> -->
-              <div class="card-title-owner-jj text-right">
-                 book from: <strong> <%= "#{mobile.user.first_name}"%></strong>
-              </div>
-              <%= link_to '',  mobile_path(mobile), class: 'card-link-jj' %>
-              </div>
-          </div>
-        <% end %>
-      </div>
-    </div><!--  fin card jérémy  -->
-
-
-    <div class="col-sm-4 the-map" id="map"  style="height: 100vh;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"><!-- debut map jeremy -->
-      <div>
-      </div>
-    </div><!-- fin map jeremy -->
-  </div>
+<div class="cards-title text-center" >
+  <h2 class="card-green-title">Choose a mobile</h2>
 </div>
+<div class="hp-listing" id="mobiles_list">
+  <div class="cards-container">
+    <div class="row">
+      <% if @mobiles.count == 0 %>
+        <div class="cards-title text-center">
+          <h2>
+            <strong>
+              "<%="#{params[:query]}"%>"
+            </strong>
+             you said ? I have no idea what you're talking about. Try again
+          </h2>
+        </div>
+      <% else %>
+      <% end %>
+      <% @mobiles.each do |mobile| %>
+        <div class="col-sm-6 card-jj">
+          <div class="thumbnail white-thumb">
+            <img class="img-card-jj" src="<%= cl_image_path mobile.photo %>" />
+            <hr>
+            <div class="card-title-jj">
+              <h4 class="card-green-title"><%="#{mobile.brand} #{mobile.model}"%></h4>
+            </div>
 
+            <div class="card-price-jj">
+               Rent it for <span class="card-green-title">€<%= "#{mobile.daily_price}"%></span>/day
+            </div>
+            <!-- <div class="card-content-jj">
+              <%= "#{mobile.content}"%>
+            </div> -->
+            <div class="card-title-owner-jj text-right">
+               book from: <strong> <%= "#{mobile.user.first_name}"%></strong>
+            </div>
+            <%= link_to '',  mobile_path(mobile), class: 'card-link-jj' %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="the-map" id="map"  style="height: 100vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"><!-- debut map jeremy -->
+  </div>
+
+</div>
