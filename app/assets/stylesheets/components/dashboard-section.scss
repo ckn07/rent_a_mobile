@@ -1,10 +1,88 @@
-.dashboard-section {
+.container-dashboard {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 10px;
+  margin: 30px;
+}
+
+.dashboard-name {
+  padding: 10px;
+}
+
+.container-user-info {
+  background: #2ed3b5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #56B4D3, #2ed3b5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #56B4D3, #2ed3b5);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  height: 500px;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-bookings {
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profile-rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
+.dashboard-section {
+  padding: 20px;
+}
+
+.dashboard-section-line {
+  padding: 10px;
+  display: flex;
+  /* flex-flow: row nowrap; */
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
 }
+
+.dashboard-section-pic {
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.dashboard-header {
+  border-radius: 8% 92% 94% 6% / 30% 85% 15% 70%;
+  background: linear-gradient(to right, #2ed3b5, #56B4D3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding-left: 30px;
+  background-color: $green;
+  color: white;
+}
+
+.dashboard-phone-img {
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-pic {
+  padding-bottom: 30px;
+}
+
+.profile-pic img {
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+// ----
+
 .dashboard-section:last-child {
   border-bottom: none;
 }
@@ -54,16 +132,3 @@
 .status.pending {
   color: lightgrey;
 }
-
-.dashboard-header {
-  margin-left: 10px;
-  padding-left: 10px;
-  background-color: $green;
-  color: white;
-}
-
-.dashboard-phone-img {
-  width: 100px;
-  height: 100px;
-}
-
