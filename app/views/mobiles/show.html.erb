@@ -26,11 +26,23 @@
             </div>
 
             <div class="mobile-earphones">
-              <h4> Earphones : <%= @mobile.earphones %></h4>
+              <h4> Earphones :
+              <% if @mobile.earphones == true %>
+                <i class="fas fa-check"></i>
+              <% else %>
+                <i class="fas fa-times"></i>
+              <% end %>
+              </h4>
             </div>
 
             <div class="mobile-charger">
-              <h4> Charger : <%= @mobile.charger %></h4>
+              <h4> Charger :
+                <% if @mobile.charger == true %>
+                  <i class="fas fa-check"></i>
+                <% else %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </h4>
             </div>
 
             <div class="content-mobile">
