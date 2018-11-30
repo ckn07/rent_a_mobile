@@ -47,7 +47,7 @@
   padding: 10px;
   display: flex;
   /* flex-flow: row nowrap; */
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -59,11 +59,9 @@
 
 .dashboard-header {
   border-radius: 8% 92% 94% 6% / 30% 85% 15% 70%;
-  background: linear-gradient(to right, #2ed3b5, #56B4D3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding-left: 30px;
-  background-color: $green;
-  color: white;
+  color: #32B796;
+  border-bottom: 2px solid #32B796;
 }
 
 .dashboard-phone-img {
