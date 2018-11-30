@@ -222,8 +222,8 @@ puts "8 mobiles saved"
 puts 'Creating a booking from Jeremy phones to Benoit.'
 
 bookingOne = Booking.new(
-minDate: Faker::Date.backward(14),
-maxDate: Date.today
+minDate: Date.today + 5,
+maxDate: Date.today + 10
   )
 bookingOne.duration = (bookingOne.maxDate - bookingOne.minDate).to_i
 bookingOne.mobile_id = mobOne.id
@@ -233,17 +233,106 @@ bookingOne.save!
 puts "Wow Jeremy has rented his phones to Benoit from #{bookingOne.minDate} to #{bookingOne.maxDate} for #{bookingOne.total_price}"
 
 
+bookingOne = Booking.new(
+minDate: Date.today - 10,
+maxDate: Date.today - 6
+  )
+bookingOne.duration = (bookingOne.maxDate - bookingOne.minDate).to_i
+bookingOne.mobile_id = mobOne.id
+bookingOne.total_price = (mobOne.daily_price * bookingOne.duration).to_i
+bookingOne.user_id = benoit.id
+bookingOne.status = "past Booking"
+bookingOne.save!
+puts "Wow Jeremy has rented his phones to Benoit from #{bookingOne.minDate} to #{bookingOne.maxDate} for #{bookingOne.total_price}"
+
+
+bookingOne = Booking.new(
+minDate: Date.today - 20,
+maxDate: Date.today - 11
+  )
+bookingOne.duration = (bookingOne.maxDate - bookingOne.minDate).to_i
+bookingOne.mobile_id = mobOne.id
+bookingOne.total_price = (mobOne.daily_price * bookingOne.duration).to_i
+bookingOne.user_id = benoit.id
+bookingOne.save!
+bookingOne.status = "Refused Booking"
+puts "Wow Jeremy has rented his phones to Benoit from #{bookingOne.minDate} to #{bookingOne.maxDate} for #{bookingOne.total_price}"
+
+
+bookingOne = Booking.new(
+minDate: Date.today - 30,
+maxDate: Date.today - 21
+  )
+bookingOne.duration = (bookingOne.maxDate - bookingOne.minDate).to_i
+bookingOne.mobile_id = mobOne.id
+bookingOne.total_price = (mobOne.daily_price * bookingOne.duration).to_i
+bookingOne.user_id = benoit.id
+bookingOne.save!
+bookingOne.status = "past Booking"
+puts "Wow Jeremy has rented his phones to Benoit from #{bookingOne.minDate} to #{bookingOne.maxDate} for #{bookingOne.total_price}"
+
+
+
 
 puts 'Creating a booking from Chris phones to Cecile.'
 
 bookingTwo = Booking.new(
-minDate: Faker::Date.backward(14),
-maxDate: Date.today
+minDate: Date.today - 10,
+maxDate: Date.today - 6
   )
 bookingTwo.duration = (bookingTwo.maxDate - bookingTwo.minDate).to_i
-bookingTwo.mobile_id = mobFour.id
-bookingTwo.total_price = (mobFour.daily_price * bookingTwo.duration).to_i
+bookingTwo.mobile_id = mobTwo.id
+bookingTwo.total_price = (mobTwo.daily_price * bookingTwo.duration).to_i
 bookingTwo.user_id = cecile.id
+bookingTwo.status = "past Booking"
+bookingTwo.save!
+
+bookingTwo = Booking.new(
+minDate: Date.today - 20,
+maxDate: Date.today - 11
+  )
+bookingTwo.duration = (bookingTwo.maxDate - bookingTwo.minDate).to_i
+bookingTwo.mobile_id = mobTwo.id
+bookingTwo.total_price = (mobTwo.daily_price * bookingTwo.duration).to_i
+bookingTwo.user_id = cecile.id
+bookingTwo.status = "past Booking"
+
+bookingTwo.save!
+
+bookingTwo = Booking.new(
+minDate: Date.today - 30,
+maxDate: Date.today - 21
+  )
+bookingTwo.duration = (bookingTwo.maxDate - bookingTwo.minDate).to_i
+bookingTwo.mobile_id = mobTwo.id
+bookingTwo.total_price = (mobTwo.daily_price * bookingTwo.duration).to_i
+bookingTwo.user_id = chris.id
+bookingTwo.status = "past Booking"
+
+bookingTwo.save!
+
+bookingTwo = Booking.new(
+minDate: Date.today - 40,
+maxDate: Date.today - 31
+  )
+bookingTwo.duration = (bookingTwo.maxDate - bookingTwo.minDate).to_i
+bookingTwo.mobile_id = mobTwo.id
+bookingTwo.total_price = (mobTwo.daily_price * bookingTwo.duration).to_i
+bookingTwo.user_id = cecile.id
+bookingTwo.status = "past Booking"
+
+bookingTwo.save!
+
+bookingTwo = Booking.new(
+minDate: Date.today - 50,
+maxDate: Date.today - 41
+  )
+bookingTwo.duration = (bookingTwo.maxDate - bookingTwo.minDate).to_i
+bookingTwo.mobile_id = mobTwo.id
+bookingTwo.total_price = (mobTwo.daily_price * bookingTwo.duration).to_i
+bookingTwo.user_id = jeremy.id
+bookingTwo.status = "past Booking"
+
 bookingTwo.save!
 puts "Wow Chris has rented his phones to Cecile from #{bookingTwo.minDate} to #{bookingTwo.maxDate} for #{bookingTwo.total_price}"
 
@@ -256,7 +345,9 @@ maxDate: Date.today
 bookingThree.duration = (bookingThree.maxDate - bookingThree.minDate).to_i
 bookingThree.mobile_id = mobEight.id
 bookingThree.total_price = (mobSix.daily_price * bookingThree.duration).to_i
-bookingThree.user_id = ben.id
+bookingThree.user_id = benoit.id
+bookingThree.status = "On going"
+
 bookingThree.save!
 puts "Wow Cricris has rented his phones to Ben from #{bookingTwo.minDate} to #{bookingTwo.maxDate} for #{bookingTwo.total_price}"
 
