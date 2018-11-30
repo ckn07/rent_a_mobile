@@ -180,6 +180,7 @@ displayTotalPrice(totalPrice);
 };
 
 const displayTotalPrice = (element) => {
+  price.innerHTML = ''
   price.insertAdjacentHTML('beforeend', `<div class="price-booking">The total price for this booking will be</div><div><strong>${element}</strong> Euros</div>`);
 
 };
